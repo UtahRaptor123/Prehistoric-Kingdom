@@ -105,13 +105,44 @@
           }
         ]
       }
+    },
+    {
+      "name": "DnaExtractorGui",
+      "type": "gui",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dna_extractor_gui"
+    },
+    {
+      "name": "Fossil",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fossil"
+    },
+    {
+      "name": "DNAextractorprocedure",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dn_aextractorprocedure",
+      "metadata": {
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.prehistoric_kingdom.coal_generator": "Coal Generator"
+      "block.prehistoric_kingdom.coal_generator": "Coal Generator",
+      "item.prehistoric_kingdom.fossil": "Fossil"
     }
   },
   "workspaceSettings": {
