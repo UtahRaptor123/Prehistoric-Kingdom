@@ -59,9 +59,9 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.prehistorickingdom.procedures.GeneratorZeroProcedure;
-import net.mcreator.prehistorickingdom.procedures.CoalGeneratorProcedureProcedure;
-import net.mcreator.prehistorickingdom.gui.CoalBurnerGuiGui;
+import net.mcreator.prehistorickingdom.procedures.MachinezeroProcedure;
+import net.mcreator.prehistorickingdom.procedures.DNAextractorprocedureProcedure;
+import net.mcreator.prehistorickingdom.gui.DnaExtractorGuiGui;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import javax.annotation.Nullable;
@@ -74,13 +74,13 @@ import java.util.Collections;
 import io.netty.buffer.Unpooled;
 
 @PrehistoricKingdomModElements.ModElement.Tag
-public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement {
-	@ObjectHolder("prehistoric_kingdom:coal_generator")
+public class DnaExtractorBlock extends PrehistoricKingdomModElements.ModElement {
+	@ObjectHolder("prehistoric_kingdom:dna_extractor")
 	public static final Block block = null;
-	@ObjectHolder("prehistoric_kingdom:coal_generator")
+	@ObjectHolder("prehistoric_kingdom:dna_extractor")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
-	public CoalGeneratorBlock(PrehistoricKingdomModElements instance) {
-		super(instance, 3);
+	public DnaExtractorBlock(PrehistoricKingdomModElements instance) {
+		super(instance, 9);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -93,7 +93,7 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 
 	@SubscribeEvent
 	public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("coal_generator"));
+		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("dna_extractor"));
 	}
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
@@ -101,15 +101,14 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 10f).lightValue(0).harvestLevel(1)
 					.harvestTool(ToolType.PICKAXE));
 			this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
-			setRegistryName("coal_generator");
+			setRegistryName("dna_extractor");
 		}
 
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Burns fuel to generate power"));
-			list.add(new StringTextComponent("Anything that burns in a furnace will work here"));
+			list.add(new StringTextComponent("Used to extract DNA from fossils"));
 		}
 
 		@Override
@@ -156,7 +155,7 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				GeneratorZeroProcedure.executeProcedure($_dependencies);
+				MachinezeroProcedure.executeProcedure($_dependencies);
 			}
 		}
 
@@ -172,7 +171,7 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				CoalGeneratorProcedureProcedure.executeProcedure($_dependencies);
+				DNAextractorprocedureProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
@@ -188,12 +187,12 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Coal Generator");
+						return new StringTextComponent("Dna Extractor");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new CoalBurnerGuiGui.GuiContainerMod(id, inventory,
+						return new DnaExtractorGuiGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -252,7 +251,7 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 	}
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
-		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -305,7 +304,7 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		public ITextComponent getDefaultName() {
-			return new StringTextComponent("coal_generator");
+			return new StringTextComponent("dna_extractor");
 		}
 
 		@Override
@@ -315,12 +314,12 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new CoalBurnerGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new DnaExtractorGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Coal Generator");
+			return new StringTextComponent("Dna Extractor");
 		}
 
 		@Override
@@ -335,6 +334,8 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
+			if (index == 2)
+				return false;
 			return true;
 		}
 
@@ -351,6 +352,8 @@ public class CoalGeneratorBlock extends PrehistoricKingdomModElements.ModElement
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
 			if (index == 0)
+				return false;
+			if (index == 1)
 				return false;
 			return true;
 		}

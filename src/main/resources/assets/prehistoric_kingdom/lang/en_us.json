@@ -1,4 +1,7 @@
 {
   "block.prehistoric_kingdom.coal_generator": "Coal Generator",
-  "item.prehistoric_kingdom.fossil": "Fossil"
+  "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
+  "item.prehistoric_kingdom.test_tube_empty": "Test Tube Empty",
+  "item.prehistoric_kingdom.fossil": "Fossil",
+  "item.prehistoric_kingdom.test_tube_chicken_1": "(Test item) Test Tube"
 }

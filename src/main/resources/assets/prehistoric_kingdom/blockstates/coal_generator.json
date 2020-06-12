@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "prehistoric_kingdom:block/coal_generator"
+    },
+    "facing=east": {
+      "model": "prehistoric_kingdom:block/coal_generator",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "prehistoric_kingdom:block/coal_generator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "prehistoric_kingdom:block/coal_generator",
+      "y": 270
     }
   }
 }

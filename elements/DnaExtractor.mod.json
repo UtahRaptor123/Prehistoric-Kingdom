@@ -5,7 +5,7 @@
     "texture": "coalgeneratortop",
     "textureTop": "coalgeneratortop",
     "textureLeft": "coalgeneratorside",
-    "textureFront": "coalgeneratorfront",
+    "textureFront": "dnaextractorfront",
     "textureRight": "coalgeneratorside",
     "textureBack": "coalgeneratorside",
     "renderType": 10,
@@ -20,10 +20,9 @@
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Coal Generator",
+    "name": "Dna Extractor",
     "specialInfo": [
-      "Burns fuel to generate power",
-      "Anything that burns in a furnace will work here"
+      "Used to extract DNA from fossils"
     ],
     "hardness": 1.0,
     "resistance": 10.0,
@@ -74,21 +73,24 @@
     "particleAmount": 4,
     "particleSpawningCondition": "ALWAYS",
     "hasInventory": true,
-    "guiBoundTo": "CoalBurnerGui",
+    "guiBoundTo": "DnaExtractorGui",
     "openGUIOnRightClick": true,
-    "inventorySize": 1,
+    "inventorySize": 3,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
-    "inventoryOutSlotIDs": [],
+    "inventoryOutSlotIDs": [
+      2
+    ],
     "inventoryInSlotIDs": [
-      0
+      0,
+      1
     ],
     "onBlockAdded": {
-      "name": "GeneratorZero"
+      "name": "Machinezero"
     },
     "onTickUpdate": {
-      "name": "CoalGeneratorProcedure"
+      "name": "DNAextractorprocedure"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

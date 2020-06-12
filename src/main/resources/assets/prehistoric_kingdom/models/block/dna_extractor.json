@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "prehistoric_kingdom:blocks/coalgeneratortop",
+    "up": "prehistoric_kingdom:blocks/coalgeneratortop",
+    "north": "prehistoric_kingdom:blocks/dnaextractorfront",
+    "east": "prehistoric_kingdom:blocks/coalgeneratorside",
+    "south": "prehistoric_kingdom:blocks/coalgeneratorside",
+    "west": "prehistoric_kingdom:blocks/coalgeneratorside",
+    "particle": "prehistoric_kingdom:blocks/coalgeneratortop"
+  }
+}
