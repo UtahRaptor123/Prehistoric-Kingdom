@@ -8,26 +8,26 @@ import net.minecraft.block.BlockState;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 @PrehistoricKingdomModElements.ModElement.Tag
-public class GeneratorZeroProcedure extends PrehistoricKingdomModElements.ModElement {
-	public GeneratorZeroProcedure(PrehistoricKingdomModElements instance) {
-		super(instance, 2);
+public class MachinezeroProcedure extends PrehistoricKingdomModElements.ModElement {
+	public MachinezeroProcedure(PrehistoricKingdomModElements instance) {
+		super(instance, 4);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure GeneratorZero!");
+			System.err.println("Failed to load dependency x for procedure Machinezero!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure GeneratorZero!");
+			System.err.println("Failed to load dependency y for procedure Machinezero!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure GeneratorZero!");
+			System.err.println("Failed to load dependency z for procedure Machinezero!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure GeneratorZero!");
+			System.err.println("Failed to load dependency world for procedure Machinezero!");
 			return;
 		}
 		int x = (int) dependencies.get("x");
@@ -39,7 +39,7 @@ public class GeneratorZeroProcedure extends PrehistoricKingdomModElements.ModEle
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
-				_tileEntity.getTileData().putDouble("Fuel", 0);
+				_tileEntity.getTileData().putBoolean("Storage", (true));
 			world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 		if (!world.isRemote) {
@@ -55,7 +55,7 @@ public class GeneratorZeroProcedure extends PrehistoricKingdomModElements.ModEle
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
-				_tileEntity.getTileData().putBoolean("Storage", (false));
+				_tileEntity.getTileData().putDouble("timer", 0);
 			world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 	}

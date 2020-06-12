@@ -152,14 +152,14 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 					return -1;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")))) {
-				if ((1 == (new Object() {
-					public double getValue(BlockPos pos, String tag) {
+				if ((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
-						return -1;
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
 					}
-				}.getValue(new BlockPos((int) x, (int) (y + 1), (int) z), "Storage")))) {
+				}.getValue(new BlockPos((int) x, (int) (y + 1), (int) z), "Storage"))) {
 					if (!world.isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -191,14 +191,14 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
-				if ((1 == (new Object() {
-					public double getValue(BlockPos pos, String tag) {
+				if ((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
-						return -1;
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
 					}
-				}.getValue(new BlockPos((int) x, (int) (y - 1), (int) z), "Storage")))) {
+				}.getValue(new BlockPos((int) x, (int) (y - 1), (int) z), "Storage"))) {
 					if (!world.isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -230,14 +230,14 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
-				if ((1 == (new Object() {
-					public double getValue(BlockPos pos, String tag) {
+				if ((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
-						return -1;
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
 					}
-				}.getValue(new BlockPos((int) (x - 1), (int) y, (int) z), "Storage")))) {
+				}.getValue(new BlockPos((int) (x - 1), (int) y, (int) z), "Storage"))) {
 					if (!world.isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -269,14 +269,14 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
-				if ((1 == (new Object() {
-					public double getValue(BlockPos pos, String tag) {
+				if ((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
-						return -1;
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
 					}
-				}.getValue(new BlockPos((int) (x + 1), (int) y, (int) z), "Storage")))) {
+				}.getValue(new BlockPos((int) (x + 1), (int) y, (int) z), "Storage"))) {
 					if (!world.isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -308,14 +308,14 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
-				if ((1 == (new Object() {
-					public double getValue(BlockPos pos, String tag) {
+				if ((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
-						return -1;
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) (z + 1)), "Storage")))) {
+				}.getValue(new BlockPos((int) x, (int) y, (int) (z + 1)), "Storage"))) {
 					if (!world.isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -347,14 +347,14 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
-				if ((1 == (new Object() {
-					public double getValue(BlockPos pos, String tag) {
+				if ((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
-						return -1;
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) (z - 1)), "Storage")))) {
+				}.getValue(new BlockPos((int) x, (int) y, (int) (z - 1)), "Storage"))) {
 					if (!world.isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
