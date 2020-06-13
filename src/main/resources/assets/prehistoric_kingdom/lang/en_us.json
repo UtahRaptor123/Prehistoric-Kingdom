@@ -1,7 +1,18 @@
 {
-  "block.prehistoric_kingdom.coal_generator": "Coal Generator",
-  "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
+  "item.prehistoric_kingdom.plasticegg": "Plastic Egg",
+  "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
+  "block.prehistoric_kingdom.incubator": "Incubator",
   "item.prehistoric_kingdom.test_tube_empty": "Test Tube Empty",
   "item.prehistoric_kingdom.fossil": "Fossil",
-  "item.prehistoric_kingdom.test_tube_chicken_1": "(Test item) Test Tube"
+  "item.prehistoric_kingdom.test_tube_chicken_2": "Test Tube (Chicken DNA)",
+  "item.prehistoric_kingdom.test_tube_chicken_1": "Test Tube (Chicken DNA)",
+  "item.prehistoric_kingdom.test_tube_useless_dna": "Test Tube (Useless DNA)",
+  "item.prehistoric_kingdom.plastic_chicken_egg": "Plastic Egg (Chicken)",
+  "item.prehistoric_kingdom.test_tube_chicken_5": "Test Tube (Chicken DNA)",
+  "item.prehistoric_kingdom.test_tube_chicken_4": "Test Tube (Chicken DNA)",
+  "item.prehistoric_kingdom.test_tube_chicken_3": "Test Tube (Chicken DNA)",
+  "block.prehistoric_kingdom.creative_dn_aextractorblock": "Creative DNA Extractor",
+  "block.prehistoric_kingdom.coal_generator": "Coal Generator",
+  "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
+  "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer"
 }

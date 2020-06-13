@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "prehistoric_kingdom:blocks/creativednaextractor",
+    "up": "prehistoric_kingdom:blocks/creativednaextractor",
+    "north": "prehistoric_kingdom:blocks/creativednaextractor",
+    "east": "prehistoric_kingdom:blocks/creativednaextractor",
+    "south": "prehistoric_kingdom:blocks/creativednaextractor",
+    "west": "prehistoric_kingdom:blocks/creativednaextractor",
+    "particle": "prehistoric_kingdom:blocks/creativednaextractor"
+  }
+}

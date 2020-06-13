@@ -1,0 +1,16 @@
+{
+  "group": "prehistoric_kingdom",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "prehistoric_kingdom:plasticegg"
+    },
+    {
+      "item": "prehistoric_kingdom:test_tube_chicken_final"
+    }
+  ],
+  "result": {
+    "item": "prehistoric_kingdom:plastic_chicken_egg",
+    "count": 1
+  }
+}

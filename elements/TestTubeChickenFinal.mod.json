@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "testtubebrokendna",
+    "texture": "testtubefixeddna",
     "customModelName": "Normal",
     "name": "Test Tube (Chicken DNA)",
     "creativeTab": {
@@ -19,7 +19,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "Chicken DNA sequence 1"
+      "Complete chicken DNA sequence"
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
