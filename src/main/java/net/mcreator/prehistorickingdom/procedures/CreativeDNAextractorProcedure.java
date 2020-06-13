@@ -7,6 +7,7 @@ import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.prehistorickingdom.item.TestTubeUselessDNAItem;
 import net.mcreator.prehistorickingdom.item.TestTubeEmptyItem;
@@ -61,7 +62,7 @@ public class CreativeDNAextractorProcedure extends PrehistoricKingdomModElements
 				return _retval.get();
 			}
 		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem())) {
-			if ((new ItemStack(FossilItem.block, (int) (1)).getItem() == (new Object() {
+			if (((new ItemStack(FossilItem.block, (int) (1)).getItem() == (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -72,7 +73,19 @@ public class CreativeDNAextractorProcedure extends PrehistoricKingdomModElements
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem())) {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem())
+					&& (new ItemStack(Blocks.AIR, (int) (1)).getItem() == (new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+							}
+							return _retval.get();
+						}
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem()))) {
 				dodrop = (double) Math.random();
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
