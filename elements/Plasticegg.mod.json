@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "testtubebrokendna",
+    "texture": "plasticegg",
     "customModelName": "Normal",
-    "name": "Test Tube (Chicken DNA)",
+    "name": "Plastic Egg",
     "creativeTab": {
       "value": "MISC"
     },
@@ -18,9 +18,7 @@
     "stayInGridWhenCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "Chicken DNA sequence 1"
-    ],
+    "specialInfo": [],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
