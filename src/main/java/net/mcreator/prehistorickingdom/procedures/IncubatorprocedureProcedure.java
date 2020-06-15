@@ -97,7 +97,7 @@ public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.M
 				}
 			}
 		}
-		if ((100 <= (new Object() {
+		if ((2000 <= (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)

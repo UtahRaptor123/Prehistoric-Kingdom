@@ -2,7 +2,7 @@
   "parent": "block/cube",
   "textures": {
     "down": "prehistoric_kingdom:blocks/coalgeneratortop",
-    "up": "prehistoric_kingdom:blocks/coalgeneratorside",
+    "up": "prehistoric_kingdom:blocks/incubatortop",
     "north": "prehistoric_kingdom:blocks/incubator",
     "east": "prehistoric_kingdom:blocks/coalgeneratorside",
     "south": "prehistoric_kingdom:blocks/coalgeneratorside",
