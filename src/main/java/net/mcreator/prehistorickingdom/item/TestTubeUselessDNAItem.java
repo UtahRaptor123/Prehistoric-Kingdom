@@ -52,7 +52,7 @@ public class TestTubeUselessDNAItem extends PrehistoricKingdomModElements.ModEle
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Useless DNA"));
+			list.add(new StringTextComponent("Damaged DNA"));
 		}
 	}
 }

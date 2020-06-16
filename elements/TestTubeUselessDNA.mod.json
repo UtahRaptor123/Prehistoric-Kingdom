@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "testtubebrokendna",
     "customModelName": "Normal",
-    "name": "Test Tube (Useless DNA)",
+    "name": "Test Tube (Damaged DNA)",
     "creativeTab": {
       "value": "MISC"
     },
@@ -19,7 +19,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "Useless DNA"
+      "Damaged DNA"
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",

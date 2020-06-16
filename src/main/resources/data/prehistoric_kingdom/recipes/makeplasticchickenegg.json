@@ -1,0 +1,19 @@
+{
+  "group": "prehistoric_kingdom",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "prehistoric_kingdom:plasticegg"
+    },
+    "1": {
+      "item": "minecraft:egg"
+    }
+  },
+  "result": {
+    "item": "prehistoric_kingdom:plasticchickenegg",
+    "count": 1
+  }
+}
