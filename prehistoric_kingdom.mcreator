@@ -470,15 +470,56 @@
           }
         ]
       }
+    },
+    {
+      "name": "DNAsplicerGUI",
+      "type": "gui",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dn_asplicer_gui"
+    },
+    {
+      "name": "Bluechickendna",
+      "type": "item",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bluechickendna"
+    },
+    {
+      "name": "DnaSplicerProcedure",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dna_splicer_procedure",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "DNAsplicer",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dn_asplicer"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.prehistoric_kingdom.bluechickendna": "Test Tube (Diamond Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.plastic": "Plastic",
       "block.prehistoric_kingdom.incubator": "Incubator",
+      "block.prehistoric_kingdom.dn_asplicer": "DNA splicer",
       "item.prehistoric_kingdom.test_tube_empty": "Test Tube Empty",
       "item.prehistoric_kingdom.fossil": "Fossil",
       "item.prehistoric_kingdom.test_tube_chicken_2": "Test Tube (Chicken DNA)",
