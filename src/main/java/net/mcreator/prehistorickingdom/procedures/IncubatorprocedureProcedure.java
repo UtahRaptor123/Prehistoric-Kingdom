@@ -1,22 +1,19 @@
 package net.mcreator.prehistorickingdom.procedures;
 
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.CapabilityItemHandler;
-
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.prehistorickingdom.item.PlasticChickenEggItem;
+import net.mcreator.prehistorickingdom.item.PlasticeggshellfragmentItem;
+import net.mcreator.prehistorickingdom.block.PlasticchickeneggBlock;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 @PrehistoricKingdomModElements.ModElement.Tag
 public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.ModElement {
@@ -53,18 +50,7 @@ public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.M
 				return -1;
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")))) {
-			if ((!(new ItemStack(Blocks.AIR, (int) (1)).getItem() == (new Object() {
-				public ItemStack getItemStack(BlockPos pos, int sltid) {
-					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-					TileEntity _ent = world.getTileEntity(pos);
-					if (_ent != null) {
-						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-							_retval.set(capability.getStackInSlot(sltid).copy());
-						});
-					}
-					return _retval.get();
-				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem()))) {
+			if ((!(Blocks.AIR.getDefaultState().getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock()))) {
 				if (!world.isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -113,30 +99,26 @@ public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.M
 					_tileEntity.getTileData().putDouble("Timer", 0);
 				world.notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
-			if ((new ItemStack(PlasticChickenEggItem.block, (int) (1)).getItem() == (new Object() {
-				public ItemStack getItemStack(BlockPos pos, int sltid) {
-					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-					TileEntity _ent = world.getTileEntity(pos);
-					if (_ent != null) {
-						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-							_retval.set(capability.getStackInSlot(sltid).copy());
-						});
-					}
-					return _retval.get();
+			if ((PlasticchickeneggBlock.block.getDefaultState().getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)))
+					.getBlock())) {
+				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+				if (!world.isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world, x, y, z, new ItemStack(PlasticeggshellfragmentItem.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.addEntity(entityToSpawn);
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem())) {
-				{
-					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					if (_ent != null) {
-						final int _sltid = (int) (0);
-						final int _amount = (int) 1;
-						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-							if (capability instanceof IItemHandlerModifiable) {
-								ItemStack _stk = capability.getStackInSlot(_sltid).copy();
-								_stk.shrink(_amount);
-								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
-							}
-						});
+				if ((0.5 >= Math.random())) {
+					if (!world.isRemote) {
+						ItemEntity entityToSpawn = new ItemEntity(world, x, y, z, new ItemStack(PlasticeggshellfragmentItem.block, (int) (1)));
+						entityToSpawn.setPickupDelay(10);
+						world.addEntity(entityToSpawn);
+					}
+				}
+				if ((0.5 >= Math.random())) {
+					if (!world.isRemote) {
+						ItemEntity entityToSpawn = new ItemEntity(world, x, y, z, new ItemStack(PlasticeggshellfragmentItem.block, (int) (1)));
+						entityToSpawn.setPickupDelay(10);
+						world.addEntity(entityToSpawn);
 					}
 				}
 				if (!world.isRemote) {

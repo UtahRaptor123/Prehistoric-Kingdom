@@ -1,0 +1,42 @@
+{
+  "group": "prehistoric_kingdom",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "1": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "2": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "3": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "4": {
+      "item": "minecraft:water_bucket"
+    },
+    "5": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "6": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "7": {
+      "item": "prehistoric_kingdom:plastic"
+    },
+    "8": {
+      "item": "prehistoric_kingdom:plastic"
+    }
+  },
+  "result": {
+    "item": "prehistoric_kingdom:plasticegg",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "prehistoric_kingdom:custom/egg",
+  "textures": {
+    "all": "prehistoric_kingdom:blocks/plasticegg",
+    "particle": "prehistoric_kingdom:blocks/plasticegg"
+  }
+}

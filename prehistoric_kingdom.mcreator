@@ -350,12 +350,108 @@
       "name": "Incubatorprocedure",
       "type": "procedure",
       "sortid": 21,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "incubatorprocedure",
       "metadata": {
         "dependencies": [
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Plasticegg",
+      "type": "block",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasticegg"
+    },
+    {
+      "name": "Plasticchickenegg",
+      "type": "block",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasticchickenegg"
+    },
+    {
+      "name": "Plastic",
+      "type": "item",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plastic"
+    },
+    {
+      "name": "Plasticeggshellfragment",
+      "type": "item",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasticeggshellfragment"
+    },
+    {
+      "name": "Eggshelltoplastic",
+      "type": "recipe",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eggshelltoplastic"
+    },
+    {
+      "name": "Makeplasticegg",
+      "type": "recipe",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "makeplasticegg"
+    },
+    {
+      "name": "Chickenbone",
+      "type": "item",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chickenbone"
+    },
+    {
+      "name": "Chickendropbone",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chickendropbone",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "int"
@@ -381,18 +477,23 @@
   "language_map": {
     "en_us": {
       "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
+      "item.prehistoric_kingdom.plastic": "Plastic",
       "block.prehistoric_kingdom.incubator": "Incubator",
       "item.prehistoric_kingdom.test_tube_empty": "Test Tube Empty",
       "item.prehistoric_kingdom.fossil": "Fossil",
       "item.prehistoric_kingdom.test_tube_chicken_2": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_1": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_useless_dna": "Test Tube (Useless DNA)",
+      "item.prehistoric_kingdom.plasticeggshellfragment": "Plastic Eggshell Fragment",
       "item.prehistoric_kingdom.test_tube_chicken_5": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_4": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_3": "Test Tube (Chicken DNA)",
+      "block.prehistoric_kingdom.plasticegg": "Plastic Egg",
       "block.prehistoric_kingdom.creative_dn_aextractorblock": "Creative DNA Extractor",
       "block.prehistoric_kingdom.coal_generator": "Coal Generator",
       "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
+      "item.prehistoric_kingdom.chickenbone": "Chicken Bone",
+      "block.prehistoric_kingdom.plasticchickenegg": "Plastic Egg (Chicken)",
       "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer"
     }
   },
