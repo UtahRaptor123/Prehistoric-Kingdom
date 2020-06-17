@@ -28,6 +28,7 @@ import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
@@ -91,8 +92,9 @@ public class TyrannosaurusRexEntity extends PrehistoricKingdomModElements.ModEle
 			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.2));
 			this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(3, new SwimGoal(this));
-			this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false));
+			this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, CowEntity.class, false, true));
+			this.targetSelector.addGoal(6, new HurtByTargetGoal(this));
 		}
 
 		@Override
@@ -103,6 +105,11 @@ public class TyrannosaurusRexEntity extends PrehistoricKingdomModElements.ModEle
 		@Override
 		public boolean canDespawn(double distanceToClosestPlayer) {
 			return false;
+		}
+
+		@Override
+		public double getMountedYOffset() {
+			return super.getMountedYOffset() + 1;
 		}
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
