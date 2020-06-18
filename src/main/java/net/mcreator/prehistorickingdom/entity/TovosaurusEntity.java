@@ -11,10 +11,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
 import net.minecraft.util.DamageSource;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
@@ -31,7 +29,6 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
@@ -142,18 +139,6 @@ public class TovosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 		}
 
 		@Override
-		public boolean processInteract(PlayerEntity sourceentity, Hand hand) {
-			super.processInteract(sourceentity, hand);
-			sourceentity.startRiding(this);
-			int x = (int) this.getPosX();
-			int y = (int) this.getPosY();
-			int z = (int) this.getPosZ();
-			ItemStack itemstack = sourceentity.getHeldItem(hand);
-			Entity entity = this;
-			return true;
-		}
-
-		@Override
 		protected void registerAttributes() {
 			super.registerAttributes();
 			if (this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
@@ -165,39 +150,6 @@ public class TovosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
 				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12);
-		}
-
-		@Override
-		public void travel(Vec3d dir) {
-			Entity entity = this.getPassengers().isEmpty() ? null : (Entity) this.getPassengers().get(0);
-			if (this.isBeingRidden()) {
-				this.rotationYaw = entity.rotationYaw;
-				this.prevRotationYaw = this.rotationYaw;
-				this.rotationPitch = entity.rotationPitch * 0.5F;
-				this.setRotation(this.rotationYaw, this.rotationPitch);
-				this.jumpMovementFactor = this.getAIMoveSpeed() * 0.15F;
-				this.renderYawOffset = entity.rotationYaw;
-				this.rotationYawHead = entity.rotationYaw;
-				this.stepHeight = 1.0F;
-				if (entity instanceof LivingEntity) {
-					this.setAIMoveSpeed((float) this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getValue());
-					float forward = ((LivingEntity) entity).moveForward;
-					float strafe = 0;
-					super.travel(new Vec3d(strafe, 0, forward));
-				}
-				this.prevLimbSwingAmount = this.limbSwingAmount;
-				double d1 = this.getPosX() - this.prevPosX;
-				double d0 = this.getPosZ() - this.prevPosZ;
-				float f1 = MathHelper.sqrt(d1 * d1 + d0 * d0) * 4.0F;
-				if (f1 > 1.0F)
-					f1 = 1.0F;
-				this.limbSwingAmount += (f1 - this.limbSwingAmount) * 0.4F;
-				this.limbSwing += this.limbSwingAmount;
-				return;
-			}
-			this.stepHeight = 0.5F;
-			this.jumpMovementFactor = 0.02F;
-			super.travel(dir);
 		}
 	}
 
