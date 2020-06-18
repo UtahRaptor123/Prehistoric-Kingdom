@@ -245,10 +245,10 @@ public static class ModelCeratosaurus extends EntityModel<Entity> {
 		this.Cerato_Head2.rotateAngleY = f3 / (180F / (float) Math.PI);
 		this.Cerato_Head2.rotateAngleX = f4 / (180F / (float) Math.PI);
 		this.Cerato_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-		this.Cerato_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Cerato_Tail4.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Cerato_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Cerato_Tail5.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.Cerato_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Cerato_Tail4.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Cerato_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Cerato_Tail5.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 		this.Cerato_Right_Leg2.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 	}
 }

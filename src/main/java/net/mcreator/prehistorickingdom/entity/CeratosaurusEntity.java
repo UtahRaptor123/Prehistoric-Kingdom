@@ -21,9 +21,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
@@ -94,8 +96,14 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
 			this.goalSelector.addGoal(6, new AvoidEntityGoal(this, TyrannosaurusRexEntity.CustomEntity.class, (float) 15, 0.6, 0.6));
-			this.goalSelector.addGoal(7, new AvoidEntityGoal(this, AllosaurusEntity.CustomEntity.class, (float) 15, 0.6, 0.6));
-			this.goalSelector.addGoal(8, new AvoidEntityGoal(this, TovosaurusEntity.CustomEntity.class, (float) 15, 0.6, 0.6));
+			this.goalSelector.addGoal(7, new AvoidEntityGoal(this, TovosaurusEntity.CustomEntity.class, (float) 15, 0.6, 0.6));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, AllosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, UtahRaptorEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ProtocertopsEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, CamptosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, OviraptorEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, PigEntity.class, false, true));
+			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, true));
 		}
 
 		@Override
@@ -417,10 +425,10 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			this.Cerato_Head2.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.Cerato_Head2.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.Cerato_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-			this.Cerato_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Cerato_Tail4.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Cerato_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Cerato_Tail5.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+			this.Cerato_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Cerato_Tail4.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Cerato_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Cerato_Tail5.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 			this.Cerato_Right_Leg2.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		}
 	}

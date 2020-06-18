@@ -21,9 +21,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
@@ -94,6 +96,14 @@ public class TovosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
 			this.goalSelector.addGoal(6, new AvoidEntityGoal(this, TyrannosaurusRexEntity.CustomEntity.class, (float) 10, 0.5, 0.5));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, AllosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, CeratosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, UtahRaptorEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ProtocertopsEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, CamptosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, OviraptorEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, CowEntity.class, false, true));
+			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, true));
 		}
 
 		@Override
@@ -397,11 +407,11 @@ public class TovosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
-			this.Tovosaur_Tail4.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Tovosaur_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Right_Leg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
-			this.Tovosaur_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Tovosaur_Tail.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+			this.Tovosaur_Tail4.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Tovosaur_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
+			this.Tovosaur_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Tovosaur_Tail.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 			this.Tovosaur_Head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.Tovosaur_Head.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;

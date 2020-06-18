@@ -212,9 +212,9 @@ public static class ModelAllosaurus extends EntityModel<Entity> {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 		this.Allosaur_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 		this.Allosaur_Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
-		this.Allosaur_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Allosaur_Tail.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Allosaur_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.Allosaur_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Allosaur_Tail.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Allosaur_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 		this.Allosaur_Head.rotateAngleY = f3 / (180F / (float) Math.PI);
 		this.Allosaur_Head.rotateAngleX = f4 / (180F / (float) Math.PI);
 	}

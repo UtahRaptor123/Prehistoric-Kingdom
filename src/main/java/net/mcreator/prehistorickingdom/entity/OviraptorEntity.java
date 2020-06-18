@@ -19,6 +19,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -88,6 +89,7 @@ public class OviraptorEntity extends PrehistoricKingdomModElements.ModElement {
 			this.goalSelector.addGoal(6, new AvoidEntityGoal(this, CeratosaurusEntity.CustomEntity.class, (float) 6, 0.4, 0.4));
 			this.goalSelector.addGoal(7, new AvoidEntityGoal(this, TovosaurusEntity.CustomEntity.class, (float) 6, 0.4, 0.4));
 			this.goalSelector.addGoal(8, new AvoidEntityGoal(this, UtahRaptorEntity.CustomEntity.class, (float) 6, 0.4, 0.4));
+			this.goalSelector.addGoal(9, new PanicGoal(this, 0.4));
 		}
 
 		@Override

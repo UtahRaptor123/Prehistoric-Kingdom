@@ -217,12 +217,12 @@ public static class ModelProtocerotops extends EntityModel<Entity> {
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 		this.Back_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-		this.Proto_Tail.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.Proto_Tail.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 		this.Front_Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		this.Front_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-		this.Proto_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Proto_Tail4.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Proto_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.Proto_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Proto_Tail4.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Proto_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 		this.Back_Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		this.Proto_Head.rotateAngleY = f3 / (180F / (float) Math.PI);
 		this.Proto_Head.rotateAngleX = f4 / (180F / (float) Math.PI);

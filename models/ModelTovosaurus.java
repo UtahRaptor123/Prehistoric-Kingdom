@@ -227,11 +227,11 @@ public static class ModelTovosaurus extends EntityModel<Entity> {
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-		this.Tovosaur_Tail4.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Tovosaur_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Right_Leg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
-		this.Tovosaur_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-		this.Tovosaur_Tail.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.Tovosaur_Tail4.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Tovosaur_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
+		this.Tovosaur_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+		this.Tovosaur_Tail.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 		this.Tovosaur_Head.rotateAngleY = f3 / (180F / (float) Math.PI);
 		this.Tovosaur_Head.rotateAngleX = f4 / (180F / (float) Math.PI);
 		this.Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;

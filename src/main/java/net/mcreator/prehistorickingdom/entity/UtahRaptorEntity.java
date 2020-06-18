@@ -21,9 +21,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
@@ -88,11 +90,20 @@ public class UtahRaptorEntity extends PrehistoricKingdomModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, true));
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.6));
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, AllosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, CeratosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, TovosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, ProtocertopsEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, CamptosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, OviraptorEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, TyrannosaurusRexEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, PigEntity.class, false, true));
+			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, true));
 		}
 
 		@Override

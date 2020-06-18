@@ -23,6 +23,7 @@ import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.entity.ai.goal.EatGrassGoal;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.EntityType;
@@ -94,6 +95,7 @@ public class ProtocertopsEntity extends PrehistoricKingdomModElements.ModElement
 			this.goalSelector.addGoal(7, new AvoidEntityGoal(this, AllosaurusEntity.CustomEntity.class, (float) 6, 0.6, 0.6));
 			this.goalSelector.addGoal(8, new AvoidEntityGoal(this, CeratosaurusEntity.CustomEntity.class, (float) 6, 0.6, 0.6));
 			this.goalSelector.addGoal(9, new AvoidEntityGoal(this, TovosaurusEntity.CustomEntity.class, (float) 6, 0.6, 0.6));
+			this.goalSelector.addGoal(10, new EatGrassGoal(this));
 		}
 
 		@Override
@@ -341,12 +343,12 @@ public class ProtocertopsEntity extends PrehistoricKingdomModElements.ModElement
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
 			this.Back_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-			this.Proto_Tail.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+			this.Proto_Tail.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 			this.Front_Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.Front_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-			this.Proto_Tail3.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Proto_Tail4.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.Proto_Tail2.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+			this.Proto_Tail3.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Proto_Tail4.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
+			this.Proto_Tail2.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 			this.Back_Right_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.Proto_Head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.Proto_Head.rotateAngleX = f4 / (180F / (float) Math.PI);

@@ -21,6 +21,7 @@ import net.minecraft.item.Item;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.EatGrassGoal;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
@@ -93,6 +94,7 @@ public class CamptosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			this.goalSelector.addGoal(7, new AvoidEntityGoal(this, CeratosaurusEntity.CustomEntity.class, (float) 6, 0.6, 0.6));
 			this.goalSelector.addGoal(8, new AvoidEntityGoal(this, TovosaurusEntity.CustomEntity.class, (float) 6, 0.6, 0.6));
 			this.goalSelector.addGoal(9, new AvoidEntityGoal(this, UtahRaptorEntity.CustomEntity.class, (float) 6, 0.6, 0.6));
+			this.goalSelector.addGoal(10, new PanicGoal(this, 0.6));
 		}
 
 		@Override
