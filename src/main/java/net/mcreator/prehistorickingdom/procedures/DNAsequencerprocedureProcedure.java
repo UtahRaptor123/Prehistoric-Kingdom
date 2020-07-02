@@ -44,9 +44,9 @@ public class DNAsequencerprocedureProcedure extends PrehistoricKingdomModElement
 			System.err.println("Failed to load dependency world for procedure DNAsequencerprocedure!");
 			return;
 		}
-		int x = (int) dependencies.get("x");
-		int y = (int) dependencies.get("y");
-		int z = (int) dependencies.get("z");
+		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
+		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		World world = (World) dependencies.get("world");
 		if (!world.isRemote) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);

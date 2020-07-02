@@ -22,15 +22,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -51,15 +51,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -89,15 +89,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -136,15 +136,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -246,15 +246,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -293,15 +293,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -358,15 +358,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -454,15 +454,15 @@
           },
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -520,15 +520,6 @@
       "registry_name": "makeplasticchickenegg"
     },
     {
-      "name": "DnaInjector",
-      "type": "gui",
-      "sortid": 32,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "dna_injector"
-    },
-    {
       "name": "DNAinjectorprocedure",
       "type": "procedure",
       "sortid": 33,
@@ -540,15 +531,15 @@
         "dependencies": [
           {
             "name": "x",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "y",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "z",
-            "type": "int"
+            "type": "number"
           },
           {
             "name": "world",
@@ -556,15 +547,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "DNAinjector",
-      "type": "block",
-      "sortid": 31,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "dn_ainjector"
     },
     {
       "name": "Dnaduplicatorgui",
@@ -613,6 +595,24 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "makediamondegg"
+    },
+    {
+      "name": "DNAinjectorgui",
+      "type": "gui",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dn_ainjectorgui"
+    },
+    {
+      "name": "DNAinjector",
+      "type": "block",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dn_ainjector"
     }
   ],
   "variable_elements": [],
@@ -621,7 +621,7 @@
     "en_us": {
       "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.plastic": "Plastic",
-      "block.prehistoric_kingdom.dn_ainjector": "DNA Injector",
+      "block.prehistoric_kingdom.dn_ainjector": "DN Ainjector",
       "item.prehistoric_kingdom.fossil": "Fossil",
       "item.prehistoric_kingdom.plasticeggshellfragment": "Plastic Eggshell Fragment",
       "item.prehistoric_kingdom.test_tube_chicken_5": "Test Tube (Chicken DNA)",
@@ -661,5 +661,5 @@
     "modElementsPackage": "net.mcreator.prehistorickingdom",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000322116
+  "mcreatorVersion": 202000425621
 }

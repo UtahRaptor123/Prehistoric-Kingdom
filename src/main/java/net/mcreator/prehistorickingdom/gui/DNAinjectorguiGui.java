@@ -41,11 +41,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @PrehistoricKingdomModElements.ModElement.Tag
-public class DnaInjectorGui extends PrehistoricKingdomModElements.ModElement {
+public class DNAinjectorguiGui extends PrehistoricKingdomModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public DnaInjectorGui(PrehistoricKingdomModElements instance) {
-		super(instance, 32);
+	public DNAinjectorguiGui(PrehistoricKingdomModElements instance) {
+		super(instance, 37);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -61,7 +61,7 @@ public class DnaInjectorGui extends PrehistoricKingdomModElements.ModElement {
 
 	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("dna_injector"));
+		event.getRegistry().register(containerType.setRegistryName("dn_ainjectorgui"));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -110,11 +110,11 @@ public class DnaInjectorGui extends PrehistoricKingdomModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 25, 30) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 25, 12) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 61, 30) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 61, 12) {
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 133, 21) {
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 133, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -302,7 +302,7 @@ public class DnaInjectorGui extends PrehistoricKingdomModElements.ModElement {
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("prehistoric_kingdom:textures/dna_injector.png");
+		private static final ResourceLocation texture = new ResourceLocation("prehistoric_kingdom:textures/dn_ainjectorgui.png");
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
 			this.renderBackground();
@@ -320,14 +320,20 @@ public class DnaInjectorGui extends PrehistoricKingdomModElements.ModElement {
 		}
 
 		@Override
+		public boolean keyPressed(int key, int b, int c) {
+			if (key == 256) {
+				this.minecraft.player.closeScreen();
+			}
+			return super.keyPressed(key, b, c);
+		}
+
+		@Override
 		public void tick() {
 			super.tick();
 		}
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("DNA", 25, 47, -16777216);
-			this.font.drawString("Egg", 61, 47, -16777216);
 		}
 
 		@Override

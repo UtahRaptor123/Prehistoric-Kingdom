@@ -17,7 +17,7 @@
           "disableStackInteraction": false,
           "name": "Slot #0",
           "x": 300,
-          "y": 132
+          "y": 96
         }
       },
       {
@@ -29,7 +29,7 @@
           "id": 1,
           "disableStackInteraction": false,
           "name": "Slot #1",
-          "x": 516,
+          "x": 372,
           "y": 96
         }
       },
@@ -40,45 +40,16 @@
           "disableStackInteraction": false,
           "name": "Slot #2",
           "x": 516,
-          "y": 168
+          "y": 96
         }
       },
       {
-        "type": "label",
+        "type": "outputslot",
         "data": {
-          "text": "Output",
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
-          "name": "Output",
-          "x": 498,
-          "y": 204
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Test Tube",
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
-          "name": "Test Tube",
-          "x": 480,
-          "y": 132
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Fossil",
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
-          "name": "Fossil",
-          "x": 300,
+          "id": 3,
+          "disableStackInteraction": false,
+          "name": "Slot #3",
+          "x": 516,
           "y": 168
         }
       }
