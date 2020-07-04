@@ -16,7 +16,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -58,7 +57,7 @@ import net.minecraft.block.Block;
 
 import net.mcreator.prehistorickingdom.procedures.MachinezeroProcedure;
 import net.mcreator.prehistorickingdom.procedures.DNAinjectorprocedureProcedure;
-import net.mcreator.prehistorickingdom.gui.DnaInjectorGui;
+import net.mcreator.prehistorickingdom.gui.DNAinjectorguiGui;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import javax.annotation.Nullable;
@@ -77,7 +76,7 @@ public class DNAinjectorBlock extends PrehistoricKingdomModElements.ModElement {
 	@ObjectHolder("prehistoric_kingdom:dn_ainjector")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public DNAinjectorBlock(PrehistoricKingdomModElements instance) {
-		super(instance, 31);
+		super(instance, 38);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -99,11 +98,6 @@ public class DNAinjectorBlock extends PrehistoricKingdomModElements.ModElement {
 					.harvestTool(ToolType.PICKAXE));
 			this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
 			setRegistryName("dn_ainjector");
-		}
-
-		@Override
-		public int tickRate(IWorldReader world) {
-			return 1;
 		}
 
 		@Override
@@ -177,12 +171,12 @@ public class DNAinjectorBlock extends PrehistoricKingdomModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("DNA Injector");
+						return new StringTextComponent("DN Ainjector");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new DnaInjectorGui.GuiContainerMod(id, inventory,
+						return new DNAinjectorguiGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -304,12 +298,12 @@ public class DNAinjectorBlock extends PrehistoricKingdomModElements.ModElement {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new DnaInjectorGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new DNAinjectorguiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("DNA Injector");
+			return new StringTextComponent("DN Ainjector");
 		}
 
 		@Override

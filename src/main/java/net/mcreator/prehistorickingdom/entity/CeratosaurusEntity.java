@@ -1,51 +1,16 @@
 
 package net.mcreator.prehistorickingdom.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.World;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.PigEntity;
-import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
-import net.minecraft.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.entity.MobRenderer;
-
-import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
-
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.block.material.Material;
 
 @PrehistoricKingdomModElements.ModElement.Tag
 public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement {
+
 	public static EntityType entity = null;
+
 	public CeratosaurusEntity(PrehistoricKingdomModElements instance) {
 		super(instance, 39);
+
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -54,9 +19,12 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(1f, 2.2f)).build("ceratosaurus")
 						.setRegistryName("ceratosaurus");
+
 		elements.entities.add(() -> entity);
+
 		elements.items
 				.add(() -> new SpawnEggItem(entity, -256, -16777216, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("ceratosaurus"));
+
 	}
 
 	@SubscribeEvent
@@ -64,14 +32,18 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 	public void registerModels(ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
 			return new MobRenderer(renderManager, new ModelCeratosaurus(), 0.7f) {
+
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("prehistoric_kingdom:textures/ceratosaurus_skin.png");
 				}
 			};
 		});
+
 	}
+
 	public static class CustomEntity extends MonsterEntity {
+
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -80,12 +52,15 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			super(type, world);
 			experienceValue = 85;
 			setNoAI(false);
+
 			enablePersistence();
+
 		}
 
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
+
 			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, true));
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.4));
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
@@ -100,6 +75,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, OviraptorEntity.CustomEntity.class, false, true));
 			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, PigEntity.class, false, true));
 			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, true));
+
 		}
 
 		@Override
@@ -144,21 +120,28 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 		@Override
 		protected void registerAttributes() {
 			super.registerAttributes();
+
 			if (this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
 				this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4);
+
 			if (this.getAttribute(SharedMonsterAttributes.MAX_HEALTH) != null)
 				this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(85);
+
 			if (this.getAttribute(SharedMonsterAttributes.ARMOR) != null)
 				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(0);
+
 			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
 				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6);
+
 		}
+
 	}
 
 	// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
+
 	public static class ModelCeratosaurus extends EntityModel<Entity> {
 		private final ModelRenderer Cerato_Left_Arm2;
 		private final ModelRenderer Cerato_ArmBend3;
@@ -184,18 +167,22 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 		private final ModelRenderer Cerato_Tail3;
 		private final ModelRenderer Cerato_Tail4;
 		private final ModelRenderer Cerato_Tail5;
+
 		public ModelCeratosaurus() {
 			textureWidth = 256;
 			textureHeight = 256;
+
 			Cerato_Left_Arm2 = new ModelRenderer(this);
 			Cerato_Left_Arm2.setRotationPoint(6.0F, 0.0F, -6.0001F);
 			setRotationAngle(Cerato_Left_Arm2, 0.0F, 3.1416F, 0.0F);
 			Cerato_Left_Arm2.setTextureOffset(77, 246).addBox(-1.0F, -2.0F, -2.0F, 1.0F, 6.0F, 4.0F, 0.0F, false);
+
 			Cerato_ArmBend3 = new ModelRenderer(this);
 			Cerato_ArmBend3.setRotationPoint(0.0F, 4.0F, 0.0F);
 			Cerato_Left_Arm2.addChild(Cerato_ArmBend3);
 			setRotationAngle(Cerato_ArmBend3, 0.7854F, 0.0F, 0.0F);
 			Cerato_ArmBend3.setTextureOffset(75, 230).addBox(-1.0F, -1.0F, -1.0F, 3.0F, 10.0F, 4.0F, 0.0F, false);
+
 			Cerato_ArmHand3 = new ModelRenderer(this);
 			Cerato_ArmHand3.setRotationPoint(0.0F, 8.0F, 7.0F);
 			Cerato_Left_Arm2.addChild(Cerato_ArmHand3);
@@ -203,19 +190,23 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			Cerato_ArmHand3.setTextureOffset(0, 0).addBox(2.0F, 0.0F, -2.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_ArmHand3.setTextureOffset(0, 0).addBox(2.0F, 1.0F, 0.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_ArmHand3.setTextureOffset(0, 0).addBox(2.0F, 3.0F, 0.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
+
 			Cerato_Arm_Claw3 = new ModelRenderer(this);
 			Cerato_Arm_Claw3.setRotationPoint(-1.0F, 11.0F, 8.0F);
 			Cerato_Left_Arm2.addChild(Cerato_Arm_Claw3);
 			setRotationAngle(Cerato_Arm_Claw3, -0.5236F, 0.0F, 0.0F);
+
 			Cerato_Right_Arm = new ModelRenderer(this);
 			Cerato_Right_Arm.setRotationPoint(-5.0F, 0.0F, -6.0F);
 			setRotationAngle(Cerato_Right_Arm, 0.0F, 3.1416F, 0.0F);
 			Cerato_Right_Arm.setTextureOffset(167, 83).addBox(1.0F, -2.0F, -2.0F, 1.0F, 6.0F, 4.0F, 0.0F, false);
+
 			Cerato_ArmBend2 = new ModelRenderer(this);
 			Cerato_ArmBend2.setRotationPoint(0.0F, 4.0F, 0.0F);
 			Cerato_Right_Arm.addChild(Cerato_ArmBend2);
 			setRotationAngle(Cerato_ArmBend2, 0.7854F, 0.0F, 0.0F);
 			Cerato_ArmBend2.setTextureOffset(169, 56).addBox(-1.0F, -1.0F, -1.0F, 3.0F, 10.0F, 4.0F, 0.0F, false);
+
 			Cerato_ArmHand2 = new ModelRenderer(this);
 			Cerato_ArmHand2.setRotationPoint(0.0F, 8.0F, 7.0F);
 			Cerato_Right_Arm.addChild(Cerato_ArmHand2);
@@ -223,24 +214,29 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			Cerato_ArmHand2.setTextureOffset(0, 0).addBox(-3.0F, 3.0F, 0.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_ArmHand2.setTextureOffset(0, 0).addBox(-3.0F, 0.0F, -2.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_ArmHand2.setTextureOffset(0, 0).addBox(-3.0F, 1.0F, 0.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
+
 			Cerato_Arm_Claw2 = new ModelRenderer(this);
 			Cerato_Arm_Claw2.setRotationPoint(-1.0F, 11.0F, 8.0F);
 			Cerato_Right_Arm.addChild(Cerato_Arm_Claw2);
 			setRotationAngle(Cerato_Arm_Claw2, -0.5236F, 0.0F, 0.0F);
+
 			Cerato_Left_Leg = new ModelRenderer(this);
 			Cerato_Left_Leg.setRotationPoint(6.0F, 2.0F, 10.0F);
 			setRotationAngle(Cerato_Left_Leg, 0.0F, 3.1416F, 0.0F);
 			Cerato_Left_Leg.setTextureOffset(0, 36).addBox(-1.0F, -11.0F, -7.0F, 1.0F, 13.0F, 10.0F, 0.0F, false);
+
 			Cerato_LongMusle = new ModelRenderer(this);
 			Cerato_LongMusle.setRotationPoint(0.0F, 2.0F, 0.0F);
 			Cerato_Left_Leg.addChild(Cerato_LongMusle);
 			setRotationAngle(Cerato_LongMusle, -0.3491F, 0.0F, 0.0F);
 			Cerato_LongMusle.setTextureOffset(0, 74).addBox(-1.0F, -1.0F, -7.0F, 5.0F, 15.0F, 8.0F, 0.0F, false);
+
 			Cerato_LowerMusle = new ModelRenderer(this);
 			Cerato_LowerMusle.setRotationPoint(0.0F, 17.0F, -4.0F);
 			Cerato_Left_Leg.addChild(Cerato_LowerMusle);
 			setRotationAngle(Cerato_LowerMusle, 0.2618F, 0.0F, 0.0F);
 			Cerato_LowerMusle.setTextureOffset(0, 96).addBox(-1.0F, -6.0F, -6.0F, 5.0F, 8.0F, 7.0F, 0.0F, false);
+
 			Cerato_Foot = new ModelRenderer(this);
 			Cerato_Foot.setRotationPoint(0.0F, 22.0F, 0.0F);
 			Cerato_Left_Leg.addChild(Cerato_Foot);
@@ -251,20 +247,24 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			Cerato_Foot.setTextureOffset(101, 157).addBox(-1.0F, -1.0F, 5.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Foot.setTextureOffset(108, 169).addBox(1.0F, -1.0F, 5.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Foot.setTextureOffset(112, 191).addBox(3.0F, -1.0F, 5.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
 			Cerato_Right_Leg2 = new ModelRenderer(this);
 			Cerato_Right_Leg2.setRotationPoint(-3.0F, 2.0F, 10.0F);
 			setRotationAngle(Cerato_Right_Leg2, 0.0F, 3.1416F, 0.0F);
 			Cerato_Right_Leg2.setTextureOffset(0, 233).addBox(3.0F, -11.0F, -7.0F, 1.0F, 13.0F, 10.0F, 0.0F, false);
+
 			Cerato_LongMusle2 = new ModelRenderer(this);
 			Cerato_LongMusle2.setRotationPoint(0.0F, 2.0F, 0.0F);
 			Cerato_Right_Leg2.addChild(Cerato_LongMusle2);
 			setRotationAngle(Cerato_LongMusle2, -0.3491F, 0.0F, 0.0F);
 			Cerato_LongMusle2.setTextureOffset(0, 200).addBox(-1.0F, -1.0F, -7.0F, 5.0F, 15.0F, 8.0F, 0.0F, false);
+
 			Cerato_LowerMusle2 = new ModelRenderer(this);
 			Cerato_LowerMusle2.setRotationPoint(0.0F, 17.0F, -4.0F);
 			Cerato_Right_Leg2.addChild(Cerato_LowerMusle2);
 			setRotationAngle(Cerato_LowerMusle2, 0.2618F, 0.0F, 0.0F);
 			Cerato_LowerMusle2.setTextureOffset(0, 184).addBox(-1.0F, -6.0F, -6.0F, 5.0F, 8.0F, 7.0F, 0.0F, false);
+
 			Cerato_Foot2 = new ModelRenderer(this);
 			Cerato_Foot2.setRotationPoint(0.0F, 22.0F, 0.0F);
 			Cerato_Right_Leg2.addChild(Cerato_Foot2);
@@ -275,6 +275,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			Cerato_Foot2.setTextureOffset(122, 251).addBox(-1.0F, -1.0F, 5.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Foot2.setTextureOffset(122, 251).addBox(1.0F, -1.0F, 5.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Foot2.setTextureOffset(122, 251).addBox(3.0F, -1.0F, 5.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
 			Cerato_Head2 = new ModelRenderer(this);
 			Cerato_Head2.setRotationPoint(0.0F, -9.0F, -14.0F);
 			Cerato_Head2.setTextureOffset(210, 201).addBox(-4.0F, -6.0F, -12.0F, 8.0F, 12.0F, 12.0F, 0.0F, false);
@@ -301,6 +302,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			Cerato_Head2.setTextureOffset(0, 0).addBox(4.0F, 6.0F, -16.0F, 0.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Head2.setTextureOffset(0, 0).addBox(4.0F, 6.0F, -20.0F, 0.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Head2.setTextureOffset(0, 0).addBox(4.0F, 6.0F, -14.0F, 0.0F, 1.0F, 1.0F, 0.0F, false);
+
 			Cerato_Bottom_Jaw = new ModelRenderer(this);
 			Cerato_Bottom_Jaw.setRotationPoint(0.0F, 5.0F, 0.0F);
 			Cerato_Head2.addChild(Cerato_Bottom_Jaw);
@@ -326,26 +328,32 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			Cerato_Bottom_Jaw.setTextureOffset(0, 0).addBox(-3.0F, -1.0F, -11.0F, 0.0F, 1.0F, 1.0F, 0.0F, false);
 			Cerato_Bottom_Jaw.setTextureOffset(222, 160).addBox(-1.0F, -1.0F, -23.0F, 2.0F, 1.0F, 15.0F, 0.0F, false);
 			Cerato_Bottom_Jaw.setTextureOffset(226, 144).addBox(-3.0F, -3.0F, -8.0F, 6.0F, 4.0F, 7.0F, 0.0F, false);
+
 			Cerato_Neck2 = new ModelRenderer(this);
 			Cerato_Neck2.setRotationPoint(0.0F, -10.0F, -18.0F);
 			setRotationAngle(Cerato_Neck2, -0.5236F, 0.0F, 0.0F);
 			Cerato_Neck2.setTextureOffset(217, 63).addBox(-3.0F, -5.0F, 0.0F, 6.0F, 10.0F, 13.0F, 0.0F, false);
+
 			Cerato_Body2 = new ModelRenderer(this);
 			Cerato_Body2.setRotationPoint(0.0F, -2.0F, -8.0F);
 			Cerato_Body2.setTextureOffset(165, 8).addBox(-6.0F, -9.0F, -1.0F, 12.0F, 14.0F, 31.0F, 0.0F, false);
+
 			Cerato_Tail2 = new ModelRenderer(this);
 			Cerato_Tail2.setRotationPoint(0.0F, -2.0F, 21.0F);
 			Cerato_Tail2.setTextureOffset(129, 209).addBox(-5.0F, -7.0F, 1.0F, 10.0F, 11.0F, 12.0F, 0.0F, false);
+
 			Cerato_Tail3 = new ModelRenderer(this);
 			Cerato_Tail3.setRotationPoint(0.0F, 0.0F, 10.0F);
 			Cerato_Tail2.addChild(Cerato_Tail3);
 			setRotationAngle(Cerato_Tail3, 0.1745F, 0.0F, 0.0F);
 			Cerato_Tail3.setTextureOffset(125, 169).addBox(-4.0F, -6.0F, 0.0F, 8.0F, 10.0F, 24.0F, 0.0F, false);
+
 			Cerato_Tail4 = new ModelRenderer(this);
 			Cerato_Tail4.setRotationPoint(0.0F, 2.9393F, 23.3055F);
 			Cerato_Tail3.addChild(Cerato_Tail4);
 			setRotationAngle(Cerato_Tail4, 0.0873F, 0.0F, 0.0F);
 			Cerato_Tail4.setTextureOffset(132, 135).addBox(-3.0F, -8.091F, -1.0834F, 6.0F, 9.0F, 24.0F, 0.0F, false);
+
 			Cerato_Tail5 = new ModelRenderer(this);
 			Cerato_Tail5.setRotationPoint(0.0F, -5.9393F, 22.6945F);
 			Cerato_Tail4.addChild(Cerato_Tail5);
@@ -373,6 +381,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.Cerato_Head2.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.Cerato_Head2.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.Cerato_Left_Leg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
@@ -383,4 +392,5 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			this.Cerato_Right_Leg2.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		}
 	}
+
 }
