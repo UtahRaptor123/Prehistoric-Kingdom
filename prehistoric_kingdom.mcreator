@@ -618,7 +618,7 @@
       "name": "Allosaurus",
       "type": "mob",
       "sortid": 38,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "allosaurus"
@@ -627,7 +627,7 @@
       "name": "Ceratosaurus",
       "type": "mob",
       "sortid": 39,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "ceratosaurus"
@@ -663,7 +663,7 @@
       "name": "Camptosaurus",
       "type": "mob",
       "sortid": 42,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "camptosaurus"
