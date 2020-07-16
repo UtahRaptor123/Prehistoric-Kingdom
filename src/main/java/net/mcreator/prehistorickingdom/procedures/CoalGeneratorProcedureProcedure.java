@@ -14,6 +14,7 @@ import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Map;
 
 @PrehistoricKingdomModElements.ModElement.Tag
 public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElements.ModElement {
@@ -21,7 +22,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 		super(instance, 3);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure CoalGeneratorProcedure!");
 			return;

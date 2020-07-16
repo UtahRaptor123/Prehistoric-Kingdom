@@ -9,13 +9,15 @@ import net.minecraft.entity.Entity;
 import net.mcreator.prehistorickingdom.item.ChickenboneItem;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
+import java.util.Map;
+
 @PrehistoricKingdomModElements.ModElement.Tag
 public class ChickendropboneProcedure extends PrehistoricKingdomModElements.ModElement {
 	public ChickendropboneProcedure(PrehistoricKingdomModElements instance) {
 		super(instance, 28);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			System.err.println("Failed to load dependency entity for procedure Chickendropbone!");
 			return;

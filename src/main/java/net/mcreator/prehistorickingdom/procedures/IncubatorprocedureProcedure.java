@@ -19,13 +19,15 @@ import net.mcreator.prehistorickingdom.item.PlasticeggshellfragmentItem;
 import net.mcreator.prehistorickingdom.block.PlasticchickeneggBlock;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
+import java.util.Map;
+
 @PrehistoricKingdomModElements.ModElement.Tag
 public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.ModElement {
 	public IncubatorprocedureProcedure(PrehistoricKingdomModElements instance) {
 		super(instance, 21);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure Incubatorprocedure!");
 			return;

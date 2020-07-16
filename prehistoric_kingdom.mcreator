@@ -617,8 +617,8 @@
     {
       "name": "Allosaurus",
       "type": "mob",
-      "sortid": 38,
-      "compiles": false,
+      "sortid": 37,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "allosaurus"
@@ -626,111 +626,45 @@
     {
       "name": "Ceratosaurus",
       "type": "mob",
-      "sortid": 39,
-      "compiles": false,
+      "sortid": 38,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "ceratosaurus"
-    },
-    {
-      "name": "Tovosaurus",
-      "type": "mob",
-      "sortid": 40,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "tovosaurus"
-    },
-    {
-      "name": "UtahRaptor",
-      "type": "mob",
-      "sortid": 41,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "utah_raptor"
-    },
-    {
-      "name": "Protocertops",
-      "type": "mob",
-      "sortid": 42,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "protocertops"
-    },
-    {
-      "name": "Camptosaurus",
-      "type": "mob",
-      "sortid": 42,
-      "compiles": false,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "camptosaurus"
-    },
-    {
-      "name": "Oviraptor",
-      "type": "mob",
-      "sortid": 42,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "oviraptor"
-    },
-    {
-      "name": "TyrannosaurusRex",
-      "type": "mob",
-      "sortid": 43,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "tyrannosaurus_rex"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.prehistoric_kingdom.tovosaurus": "Tovosaurus Spawn Egg",
       "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.plastic": "Plastic",
       "entity.prehistoric_kingdom.allosaurus": "Allosaurus",
       "entity.prehistoric_kingdom.ceratosaurus": "Ceratosaurus",
       "block.prehistoric_kingdom.dn_ainjector": "DNA Injector",
-      "entity.prehistoric_kingdom.tyrannosaurus_rex": "Tyrannosaurus Rex",
-      "item.prehistoric_kingdom.utah_raptor": "Utahraptor Spawn Egg",
-      "item.prehistoric_kingdom.protocertops": "Protocertops Spawn Egg",
       "item.prehistoric_kingdom.fossil": "Fossil",
-      "entity.prehistoric_kingdom.oviraptor": "Oviraptor",
       "item.prehistoric_kingdom.plasticeggshellfragment": "Plastic Eggshell Fragment",
       "item.prehistoric_kingdom.test_tube_chicken_5": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_4": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_3": "Test Tube (Chicken DNA)",
       "block.prehistoric_kingdom.creative_dn_aextractorblock": "Creative DNA Extractor",
-      "entity.prehistoric_kingdom.utah_raptor": "Utahraptor",
       "block.prehistoric_kingdom.coal_generator": "Coal Generator",
       "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
-      "entity.prehistoric_kingdom.tovosaurus": "Tovosaurus",
       "item.prehistoric_kingdom.allosaurus": "Allosaurus Spawn Egg",
       "block.prehistoric_kingdom.diamondegg": "Diamond Encrusted Plastic Egg",
       "item.prehistoric_kingdom.bluechickendna": "Test Tube (Diamond Chicken DNA)",
       "item.prehistoric_kingdom.ceratosaurus": "Ceratosaurus Spawn Egg",
       "block.prehistoric_kingdom.incubator": "Incubator",
       "block.prehistoric_kingdom.dna_duplicator": "Dna Duplicator",
-      "item.prehistoric_kingdom.oviraptor": "Oviraptor Spawn Egg",
       "block.prehistoric_kingdom.dn_asplicer": "DNA splicer",
       "item.prehistoric_kingdom.test_tube_empty": "Test Tube Empty",
-      "entity.prehistoric_kingdom.protocertops": "Protocertops",
       "item.prehistoric_kingdom.test_tube_chicken_2": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_1": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_useless_dna": "Test Tube (Damaged DNA)",
       "block.prehistoric_kingdom.plasticegg": "Plastic Egg",
-      "item.prehistoric_kingdom.camptosaurus": "Camptosaurus Spawn Egg",
-      "entity.prehistoric_kingdom.camptosaurus": "Camptosaurus",
       "item.prehistoric_kingdom.chickenbone": "Chicken Bone",
       "block.prehistoric_kingdom.plasticchickenegg": "Plastic Egg (Chicken)",
-      "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer",
-      "item.prehistoric_kingdom.tyrannosaurus_rex": "Tyrannosaurus Rex Spawn Egg"
+      "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer"
     }
   },
   "workspaceSettings": {
@@ -749,5 +683,5 @@
     "modElementsPackage": "net.mcreator.prehistorickingdom",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000425621
+  "mcreatorVersion": 202000428114
 }

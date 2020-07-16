@@ -6,6 +6,7 @@
     "width": 354,
     "height": 337,
     "renderBgLayer": true,
+    "doesPauseGame": false,
     "components": [
       {
         "type": "inputslot",

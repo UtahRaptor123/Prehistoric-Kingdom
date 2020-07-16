@@ -4,20 +4,20 @@
   "definition": {
     "mobName": "Ceratosaurus",
     "mobLabel": "",
-    "mobModelName": "ModelCeratosaurus",
-    "mobModelTexture": "ceratosaurus_skin.png",
+    "mobModelName": "Modelcustom_model",
+    "mobModelTexture": "ceratosaurus_skin_1.png",
     "mobModelGlowTexture": "",
-    "modelWidth": 1.0,
-    "modelHeight": 2.2,
-    "modelShadowSize": 0.7,
-    "mountedYOffset": 0.5,
+    "modelWidth": 0.6,
+    "modelHeight": 1.8,
+    "modelShadowSize": 0.5,
+    "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -256,
+      "value": -13210,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -16777216,
+      "value": -13421773,
       "falpha": 0.0
     },
     "creativeTab": {
@@ -46,7 +46,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 6,
+    "attackStrength": 5,
     "movementSpeed": 0.4,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
@@ -54,6 +54,9 @@
     "xpAmount": 85,
     "waterMob": false,
     "flyingMob": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
     "disableCollisions": false,
     "ridable": false,
     "canControlForward": false,
@@ -67,7 +70,7 @@
     "immuneToPotions": false,
     "immuneToPlayer": false,
     "mobDrop": {
-      "value": ""
+      "value": "Items.BONE"
     },
     "livingSound": {
       "value": ""
@@ -85,10 +88,9 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "particleSpawningCondition": "ALWAYS",
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><next><block type=\"wander\"><field name=\"speed\">0.4</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><next><block type=\"look_around\"><next><block type=\"swim_in_water\"><next><block type=\"avoid_entity\"><field name=\"radius\">15</field><field name=\"farspeed\">0.6</field><field name=\"nearspeed\">0.6</field><field name=\"entity\">CUSTOM:TyrannosaurusRex</field><next><block type=\"avoid_entity\"><field name=\"radius\">15</field><field name=\"farspeed\">0.6</field><field name=\"nearspeed\">0.6</field><field name=\"entity\">CUSTOM:Tovosaurus</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">CUSTOM:Allosaurus</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">CUSTOM:UtahRaptor</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">CUSTOM:Protocertops</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">CUSTOM:Camptosaurus</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">CUSTOM:Oviraptor</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">EntityPig</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">EntityPlayer</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.4</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"avoid_entity\"><field name=\"radius\">10</field><field name=\"farspeed\">0.4</field><field name=\"nearspeed\">0.5</field><field name=\"entity\">CUSTOM:Allosaurus</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
@@ -97,12 +99,12 @@
       "value": ""
     },
     "rangedItemType": "Default item",
-    "spawnThisMob": false,
+    "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 20,
-    "mobSpawningType": "creature",
+    "mobSpawningType": "ambient",
     "minNumberOfMobsPerGroup": 1,
-    "maxNumberOfMobsPerGroup": 5,
+    "maxNumberOfMobsPerGroup": 2,
     "restrictionBiomes": [],
     "spawnInDungeons": false
   }
