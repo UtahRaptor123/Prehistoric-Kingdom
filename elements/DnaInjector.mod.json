@@ -12,6 +12,7 @@
     "customModelName": "Normal",
     "rotationMode": 1,
     "emissiveRendering": false,
+    "itemTexture": "",
     "hasTransparency": false,
     "connectedSides": false,
     "transparencyType": "SOLID",
@@ -92,6 +93,7 @@
     "energyMaxExtract": 200,
     "isFluidTank": false,
     "fluidCapacity": 8000,
+    "fluidRestrictions": [],
     "onBlockAdded": {
       "name": "Machinezero"
     },
