@@ -561,7 +561,7 @@
       "name": "DNAinjector",
       "type": "block",
       "sortid": 31,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "dn_ainjector"
