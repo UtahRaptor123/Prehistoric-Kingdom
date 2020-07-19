@@ -613,6 +613,42 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "makediamondegg"
+    },
+    {
+      "name": "Allosaurus",
+      "type": "mob",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "allosaurus"
+    },
+    {
+      "name": "Baryonyx",
+      "type": "mob",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "baryonyx"
+    },
+    {
+      "name": "Ceratosaurus",
+      "type": "mob",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ceratosaurus"
+    },
+    {
+      "name": "Majungasaurus",
+      "type": "mob",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "majungasaurus"
     }
   ],
   "variable_elements": [],
@@ -621,6 +657,8 @@
     "en_us": {
       "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.plastic": "Plastic",
+      "entity.prehistoric_kingdom.allosaurus": "Allosaurus",
+      "entity.prehistoric_kingdom.ceratosaurus": "Ceratosaurus",
       "block.prehistoric_kingdom.dn_ainjector": "DNA Injector",
       "item.prehistoric_kingdom.fossil": "Fossil",
       "item.prehistoric_kingdom.plasticeggshellfragment": "Plastic Eggshell Fragment",
@@ -630,8 +668,12 @@
       "block.prehistoric_kingdom.creative_dn_aextractorblock": "Creative DNA Extractor",
       "block.prehistoric_kingdom.coal_generator": "Coal Generator",
       "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
+      "item.prehistoric_kingdom.majungasaurus": "Majungasaurus Spawn Egg",
+      "entity.prehistoric_kingdom.majungasaurus": "Majungasaurus",
+      "item.prehistoric_kingdom.allosaurus": "Allosaurus Spawn Egg",
       "block.prehistoric_kingdom.diamondegg": "Diamond Encrusted Plastic Egg",
       "item.prehistoric_kingdom.bluechickendna": "Test Tube (Diamond Chicken DNA)",
+      "item.prehistoric_kingdom.ceratosaurus": "Ceratosaurus Spawn Egg",
       "block.prehistoric_kingdom.incubator": "Incubator",
       "block.prehistoric_kingdom.dna_duplicator": "Dna Duplicator",
       "block.prehistoric_kingdom.dn_asplicer": "DNA splicer",
@@ -639,7 +681,9 @@
       "item.prehistoric_kingdom.test_tube_chicken_2": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_1": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_useless_dna": "Test Tube (Damaged DNA)",
+      "entity.prehistoric_kingdom.baryonyx": "Baryonyx",
       "block.prehistoric_kingdom.plasticegg": "Plastic Egg",
+      "item.prehistoric_kingdom.baryonyx": "Baryonyx Spawn Egg",
       "item.prehistoric_kingdom.chickenbone": "Chicken Bone",
       "block.prehistoric_kingdom.plasticchickenegg": "Plastic Egg (Chicken)",
       "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer"

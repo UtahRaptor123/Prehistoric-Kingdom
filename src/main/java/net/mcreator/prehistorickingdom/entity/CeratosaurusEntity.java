@@ -5,26 +5,24 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.World;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.PigEntity;
+import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
@@ -33,9 +31,7 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
@@ -43,6 +39,7 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.MobRenderer;
 
+import net.mcreator.prehistorickingdom.item.ChickenboneItem;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -52,7 +49,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 	public static EntityType entity = null;
 	public CeratosaurusEntity(PrehistoricKingdomModElements instance) {
-		super(instance, 38);
+		super(instance, 39);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -63,23 +60,14 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 						.setRegistryName("ceratosaurus");
 		elements.entities.add(() -> entity);
 		elements.items
-				.add(() -> new SpawnEggItem(entity, -13210, -13421773, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("ceratosaurus"));
-	}
-
-	@Override
-	public void init(FMLCommonSetupEvent event) {
-		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
-			biome.getSpawns(EntityClassification.AMBIENT).add(new Biome.SpawnListEntry(entity, 20, 1, 2));
-		}
-		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS,
-				Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
+				.add(() -> new SpawnEggItem(entity, -154, -10066330, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("ceratosaurus"));
 	}
 
 	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public void registerModels(ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			return new MobRenderer(renderManager, new Modelcustom_model(), 0.5f) {
+			return new MobRenderer(renderManager, new ModelCeratosaurusRemodel(), 0.5f) {
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("prehistoric_kingdom:textures/ceratosaurus_skin_1.png");
@@ -94,7 +82,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 
 		public CustomEntity(EntityType<CustomEntity> type, World world) {
 			super(type, world);
-			experienceValue = 85;
+			experienceValue = 80;
 			setNoAI(false);
 			enablePersistence();
 		}
@@ -112,7 +100,11 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			this.goalSelector.addGoal(3, new RandomWalkingGoal(this, 0.4));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, true));
-			this.goalSelector.addGoal(6, new AvoidEntityGoal(this, AllosaurusEntity.CustomEntity.class, (float) 10, 0.4, 0.5));
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, BaryonyxEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, MajungasaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, CowEntity.class, false, true));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, PigEntity.class, false, true));
+			this.goalSelector.addGoal(10, new AvoidEntityGoal(this, AllosaurusEntity.CustomEntity.class, (float) 8, 0.6, 0.4));
 		}
 
 		@Override
@@ -127,7 +119,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Items.BONE, (int) (1)));
+			this.entityDropItem(new ItemStack(ChickenboneItem.block, (int) (1)));
 		}
 
 		@Override
@@ -156,19 +148,19 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 			if (this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
 				this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4);
 			if (this.getAttribute(SharedMonsterAttributes.MAX_HEALTH) != null)
-				this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(85);
+				this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(80);
 			if (this.getAttribute(SharedMonsterAttributes.ARMOR) != null)
 				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(0);
 			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
 				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5);
+			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6);
 		}
 	}
 
-	// Made with Blockbench 3.6.0
+	// Made with Blockbench 3.6.3
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
-	public static class Modelcustom_model extends EntityModel<Entity> {
+	public static class ModelCeratosaurusRemodel extends EntityModel<Entity> {
 		private final ModelRenderer Cerato_Head;
 		private final ModelRenderer Cerato_Jaw;
 		private final ModelRenderer Cerato_FrontHorn;
@@ -190,7 +182,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 		private final ModelRenderer Cerato_Left_Leg4;
 		private final ModelRenderer Cerato_Left_Leg5;
 		private final ModelRenderer Cerato_Left_Leg6;
-		public Modelcustom_model() {
+		public ModelCeratosaurusRemodel() {
 			textureWidth = 192;
 			textureHeight = 192;
 			Cerato_Head = new ModelRenderer(this);

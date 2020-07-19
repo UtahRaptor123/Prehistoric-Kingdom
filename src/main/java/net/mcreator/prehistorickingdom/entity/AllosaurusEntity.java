@@ -17,6 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,6 +38,7 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.MobRenderer;
 
+import net.mcreator.prehistorickingdom.item.ChickenboneItem;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -57,7 +59,7 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 						.setRegistryName("allosaurus");
 		elements.entities.add(() -> entity);
 		elements.items
-				.add(() -> new SpawnEggItem(entity, -13421773, -3381760, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("allosaurus"));
+				.add(() -> new SpawnEggItem(entity, -13421773, -39373, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("allosaurus"));
 	}
 
 	@SubscribeEvent
@@ -81,6 +83,7 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 			super(type, world);
 			experienceValue = 110;
 			setNoAI(false);
+			enablePersistence();
 		}
 
 		@Override
@@ -96,8 +99,11 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 			this.goalSelector.addGoal(3, new RandomWalkingGoal(this, 0.5));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, true));
-			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, CowEntity.class, false, true));
-			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, PigEntity.class, false, true));
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, BaryonyxEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, CeratosaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, MajungasaurusEntity.CustomEntity.class, false, true));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, CowEntity.class, false, true));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, PigEntity.class, false, true));
 		}
 
 		@Override
@@ -105,8 +111,14 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 			return CreatureAttribute.UNDEFINED;
 		}
 
+		@Override
+		public boolean canDespawn(double distanceToClosestPlayer) {
+			return false;
+		}
+
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
+			this.entityDropItem(new ItemStack(ChickenboneItem.block, (int) (1)));
 		}
 
 		@Override
@@ -140,7 +152,7 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(0);
 			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
 				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6);
+			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(7);
 		}
 	}
 
