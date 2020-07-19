@@ -23,6 +23,7 @@ import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Map;
 
 @PrehistoricKingdomModElements.ModElement.Tag
 public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElements.ModElement {
@@ -30,7 +31,7 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 		super(instance, 5);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure DNAextractorprocedure!");
 			return;
@@ -47,9 +48,9 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 			System.err.println("Failed to load dependency world for procedure DNAextractorprocedure!");
 			return;
 		}
-		int x = (int) dependencies.get("x");
-		int y = (int) dependencies.get("y");
-		int z = (int) dependencies.get("z");
+		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
+		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		World world = (World) dependencies.get("world");
 		double dodrop = 0;
 		if ((200 <= (new Object() {

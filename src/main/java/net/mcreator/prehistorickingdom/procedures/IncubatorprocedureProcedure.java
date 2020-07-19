@@ -3,9 +3,13 @@ package net.mcreator.prehistorickingdom.procedures;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
@@ -15,13 +19,15 @@ import net.mcreator.prehistorickingdom.item.PlasticeggshellfragmentItem;
 import net.mcreator.prehistorickingdom.block.PlasticchickeneggBlock;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
+import java.util.Map;
+
 @PrehistoricKingdomModElements.ModElement.Tag
 public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.ModElement {
 	public IncubatorprocedureProcedure(PrehistoricKingdomModElements instance) {
 		super(instance, 21);
 	}
 
-	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			System.err.println("Failed to load dependency x for procedure Incubatorprocedure!");
 			return;
@@ -38,9 +44,9 @@ public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.M
 			System.err.println("Failed to load dependency world for procedure Incubatorprocedure!");
 			return;
 		}
-		int x = (int) dependencies.get("x");
-		int y = (int) dependencies.get("y");
-		int z = (int) dependencies.get("z");
+		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
+		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		World world = (World) dependencies.get("world");
 		if ((5 <= (new Object() {
 			public double getValue(BlockPos pos, String tag) {
@@ -124,6 +130,9 @@ public class IncubatorprocedureProcedure extends PrehistoricKingdomModElements.M
 				if (!world.isRemote) {
 					Entity entityToSpawn = new ChickenEntity(EntityType.CHICKEN, world);
 					entityToSpawn.setLocationAndAngles(x, (y + 1), z, world.rand.nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof MobEntity)
+						((MobEntity) entityToSpawn).onInitialSpawn(world, world.getDifficultyForLocation(new BlockPos(entityToSpawn)),
+								SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
 					world.addEntity(entityToSpawn);
 				}
 			}
