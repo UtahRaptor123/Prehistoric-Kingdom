@@ -5,7 +5,7 @@
     "mobName": "Majungasaurus",
     "mobLabel": "",
     "mobModelName": "ModelMajungasaurus",
-    "mobModelTexture": "majungasaurus_skin1.png",
+    "mobModelTexture": "majungasaurus_skin.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.6,
     "modelHeight": 1.8,
