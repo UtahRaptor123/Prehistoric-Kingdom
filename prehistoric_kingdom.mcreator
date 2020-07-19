@@ -613,15 +613,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "makediamondegg"
-    },
-    {
-      "name": "TyrannosaurusRex",
-      "type": "mob",
-      "sortid": 37,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "tyrannosaurus_rex"
     }
   ],
   "variable_elements": [],
@@ -631,7 +622,6 @@
       "item.prehistoric_kingdom.test_tube_chicken_final": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.plastic": "Plastic",
       "block.prehistoric_kingdom.dn_ainjector": "DNA Injector",
-      "entity.prehistoric_kingdom.tyrannosaurus_rex": "Tyrannosaurus Rex",
       "item.prehistoric_kingdom.fossil": "Fossil",
       "item.prehistoric_kingdom.plasticeggshellfragment": "Plastic Eggshell Fragment",
       "item.prehistoric_kingdom.test_tube_chicken_5": "Test Tube (Chicken DNA)",
@@ -652,8 +642,7 @@
       "block.prehistoric_kingdom.plasticegg": "Plastic Egg",
       "item.prehistoric_kingdom.chickenbone": "Chicken Bone",
       "block.prehistoric_kingdom.plasticchickenegg": "Plastic Egg (Chicken)",
-      "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer",
-      "item.prehistoric_kingdom.tyrannosaurus_rex": "Tyrannosaurus Rex Spawn Egg"
+      "block.prehistoric_kingdom.dn_asequencer": "DNA Sequencer"
     }
   },
   "workspaceSettings": {
