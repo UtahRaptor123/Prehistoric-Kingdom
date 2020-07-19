@@ -72,7 +72,7 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "<NONE>",
+    "guiBoundTo": "DnaInjector",
     "openGUIOnRightClick": true,
     "inventorySize": 4,
     "inventoryStackSize": 64,
