@@ -68,7 +68,7 @@ public class MajungasaurusEntity extends PrehistoricKingdomModElements.ModElemen
 			return new MobRenderer(renderManager, new ModelMajungasaurus(), 0.5f) {
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
-					return new ResourceLocation("prehistoric_kingdom:textures/majungasaurus_skin1.png");
+					return new ResourceLocation("prehistoric_kingdom:textures/majungasaurus_skin.png");
 				}
 			};
 		});
