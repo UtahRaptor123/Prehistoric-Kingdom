@@ -649,6 +649,51 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "majungasaurus"
+    },
+    {
+      "name": "Skeleton1",
+      "type": "structure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skeleton_1"
+    },
+    {
+      "name": "Skeleton2",
+      "type": "structure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skeleton_2"
+    },
+    {
+      "name": "Skeleton3",
+      "type": "structure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skeleton_3"
+    },
+    {
+      "name": "Skeleton4",
+      "type": "structure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skeleton_4"
+    },
+    {
+      "name": "Skeleton5",
+      "type": "structure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skeleton_5"
     }
   ],
   "variable_elements": [],
