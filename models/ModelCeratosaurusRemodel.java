@@ -121,13 +121,11 @@ public static class ModelCeratosaurusRemodel extends EntityModel<Entity> {
 
 		Cerato_Left_Leg = new ModelRenderer(this);
 		Cerato_Left_Leg.setRotationPoint(7.0F, -10.0F, 20.0F);
-		setRotationAngle(Cerato_Left_Leg, -0.3491F, 0.0F, 0.0F);
 		Cerato_Left_Leg.setTextureOffset(78, 73).addBox(-1.0F, -2.0F, -4.0F, 5.0F, 16.0F, 12.0F, 0.0F, false);
 
 		Cerato_Left_Leg2 = new ModelRenderer(this);
-		Cerato_Left_Leg2.setRotationPoint(0.0F, 15.0F, 0.0F);
+		Cerato_Left_Leg2.setRotationPoint(0.0F, 15.0F, 1.0F);
 		Cerato_Left_Leg.addChild(Cerato_Left_Leg2);
-		setRotationAngle(Cerato_Left_Leg2, 0.3491F, 0.0F, 0.0F);
 		Cerato_Left_Leg2.setTextureOffset(98, 122).addBox(-1.0F, -2.0F, -1.0F, 5.0F, 18.0F, 8.0F, -0.1F, false);
 
 		Cerato_Left_Leg3 = new ModelRenderer(this);
@@ -137,13 +135,11 @@ public static class ModelCeratosaurusRemodel extends EntityModel<Entity> {
 
 		Cerato_Left_Leg4 = new ModelRenderer(this);
 		Cerato_Left_Leg4.setRotationPoint(-7.0F, -10.0F, 20.0F);
-		setRotationAngle(Cerato_Left_Leg4, -0.3491F, 0.0F, 0.0F);
 		Cerato_Left_Leg4.setTextureOffset(44, 73).addBox(-4.0F, -2.0F, -4.0F, 5.0F, 16.0F, 12.0F, 0.0F, false);
 
 		Cerato_Left_Leg5 = new ModelRenderer(this);
-		Cerato_Left_Leg5.setRotationPoint(-3.0F, 15.0F, 0.0F);
+		Cerato_Left_Leg5.setRotationPoint(-3.0F, 15.0F, 1.0F);
 		Cerato_Left_Leg4.addChild(Cerato_Left_Leg5);
-		setRotationAngle(Cerato_Left_Leg5, 0.3491F, 0.0F, 0.0F);
 		Cerato_Left_Leg5.setTextureOffset(72, 122).addBox(-1.0F, -2.0F, -1.0F, 5.0F, 18.0F, 8.0F, -0.1F, false);
 
 		Cerato_Left_Leg6 = new ModelRenderer(this);

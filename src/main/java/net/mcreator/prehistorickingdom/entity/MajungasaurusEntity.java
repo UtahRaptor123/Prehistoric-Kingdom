@@ -239,12 +239,10 @@ public class MajungasaurusEntity extends PrehistoricKingdomModElements.ModElemen
 			Majunga_LeftArm2.setTextureOffset(28, 179).addBox(-5.0F, 3.0F, -3.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
 			Majunga_Left_Leg1 = new ModelRenderer(this);
 			Majunga_Left_Leg1.setRotationPoint(7.0F, -9.0F, 17.0F);
-			setRotationAngle(Majunga_Left_Leg1, -0.3491F, 0.0F, 0.0F);
 			Majunga_Left_Leg1.setTextureOffset(0, 77).addBox(-1.0F, -6.0F, -7.0F, 5.0F, 18.0F, 14.0F, 0.0F, false);
 			Majunga_Left_Leg2 = new ModelRenderer(this);
-			Majunga_Left_Leg2.setRotationPoint(0.0F, 7.0F, -2.0F);
+			Majunga_Left_Leg2.setRotationPoint(0.0F, 7.0F, 0.0F);
 			Majunga_Left_Leg1.addChild(Majunga_Left_Leg2);
-			setRotationAngle(Majunga_Left_Leg2, 0.3491F, 0.0F, 0.0F);
 			Majunga_Left_Leg2.setTextureOffset(30, 132).addBox(-1.0F, 4.0F, -3.0F, 5.0F, 19.0F, 10.0F, -0.1F, false);
 			Majunga_Left_Leg3 = new ModelRenderer(this);
 			Majunga_Left_Leg3.setRotationPoint(0.0F, 25.0F, 0.0F);
@@ -252,12 +250,10 @@ public class MajungasaurusEntity extends PrehistoricKingdomModElements.ModElemen
 			Majunga_Left_Leg3.setTextureOffset(86, 109).addBox(-2.0F, -2.0F, -8.0F, 7.0F, 4.0F, 15.0F, 0.0F, false);
 			Majunga_Right_Leg1 = new ModelRenderer(this);
 			Majunga_Right_Leg1.setRotationPoint(-7.0F, -9.0F, 17.0F);
-			setRotationAngle(Majunga_Right_Leg1, -0.3491F, 0.0F, 0.0F);
 			Majunga_Right_Leg1.setTextureOffset(102, 45).addBox(-4.0F, -6.0F, -7.0F, 5.0F, 18.0F, 14.0F, 0.0F, false);
 			Majunga_Right_Leg2 = new ModelRenderer(this);
-			Majunga_Right_Leg2.setRotationPoint(-3.0F, 7.0F, -2.0F);
+			Majunga_Right_Leg2.setRotationPoint(-3.0F, 7.0F, 0.0F);
 			Majunga_Right_Leg1.addChild(Majunga_Right_Leg2);
-			setRotationAngle(Majunga_Right_Leg2, 0.3491F, 0.0F, 0.0F);
 			Majunga_Right_Leg2.setTextureOffset(0, 132).addBox(-1.0F, 4.0F, -3.0F, 5.0F, 19.0F, 10.0F, -0.1F, false);
 			Majunga_Right_Leg3 = new ModelRenderer(this);
 			Majunga_Right_Leg3.setRotationPoint(0.0F, 25.0F, 0.0F);
