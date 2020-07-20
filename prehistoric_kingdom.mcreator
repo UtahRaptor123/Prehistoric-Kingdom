@@ -642,15 +642,6 @@
       "registry_name": "ceratosaurus"
     },
     {
-      "name": "Majungasaurus",
-      "type": "mob",
-      "sortid": 40,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "majungasaurus"
-    },
-    {
       "name": "Skeleton1",
       "type": "structure",
       "sortid": 41,
@@ -713,8 +704,6 @@
       "block.prehistoric_kingdom.creative_dn_aextractorblock": "Creative DNA Extractor",
       "block.prehistoric_kingdom.coal_generator": "Coal Generator",
       "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
-      "item.prehistoric_kingdom.majungasaurus": "Majungasaurus Spawn Egg",
-      "entity.prehistoric_kingdom.majungasaurus": "Majungasaurus",
       "item.prehistoric_kingdom.allosaurus": "Allosaurus Spawn Egg",
       "block.prehistoric_kingdom.diamondegg": "Diamond Encrusted Plastic Egg",
       "item.prehistoric_kingdom.bluechickendna": "Test Tube (Diamond Chicken DNA)",
