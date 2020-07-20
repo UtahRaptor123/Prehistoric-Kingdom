@@ -55,7 +55,7 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 	@Override
 	public void initElements() {
 		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.AMBIENT).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("allosaurus")
+				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.8f, 3.2f)).build("allosaurus")
 						.setRegistryName("allosaurus");
 		elements.entities.add(() -> entity);
 		elements.items
@@ -66,7 +66,7 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	public void registerModels(ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			return new MobRenderer(renderManager, new ModelAllosaurus_Remodel(), 0.5f) {
+			return new MobRenderer(renderManager, new ModelAllosaurus_Remodel(), 0.7f) {
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("prehistoric_kingdom:textures/allosaurus_remodel_skin_3.png");

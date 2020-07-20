@@ -56,7 +56,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 	@Override
 	public void initElements() {
 		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.AMBIENT).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("ceratosaurus")
+				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.7f, 2.6f)).build("ceratosaurus")
 						.setRegistryName("ceratosaurus");
 		elements.entities.add(() -> entity);
 		elements.items
@@ -67,7 +67,7 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 	@OnlyIn(Dist.CLIENT)
 	public void registerModels(ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			return new MobRenderer(renderManager, new ModelCeratosaurusRemodel(), 0.5f) {
+			return new MobRenderer(renderManager, new ModelCeratosaurusRemodel(), 0.6f) {
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("prehistoric_kingdom:textures/ceratosaurus_skin_1.png");
