@@ -1,6 +1,6 @@
 package net.mcreator.prehistorickingdom.procedures;
 
-import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.block.BlockState;
@@ -35,30 +35,30 @@ public class MachinezeroProcedure extends PrehistoricKingdomModElements.ModEleme
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		World world = (World) dependencies.get("world");
-		if (!world.isRemote) {
+		IWorld world = (IWorld) dependencies.get("world");
+		if (!world.getWorld().isRemote) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
 				_tileEntity.getTileData().putBoolean("Storage", (true));
-			world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
-		if (!world.isRemote) {
+		if (!world.getWorld().isRemote) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
 				_tileEntity.getTileData().putDouble("Power", 0);
-			world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
-		if (!world.isRemote) {
+		if (!world.getWorld().isRemote) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
 				_tileEntity.getTileData().putDouble("timer", 0);
-			world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 	}
 }

@@ -5,6 +5,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.common.ForgeHooks;
 
 import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
@@ -42,9 +43,10 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		World world = (World) dependencies.get("world");
-		world.notifyNeighborsOfStateChange(new BlockPos((int) x, (int) y, (int) z),
-				world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock());
+		IWorld world = (IWorld) dependencies.get("world");
+		if (world instanceof World)
+			world.getWorld().notifyNeighborsOfStateChange(new BlockPos((int) x, (int) y, (int) z),
+					world.getBlockState(new BlockPos((int) x, (int) y, (int) z)).getBlock());
 		if (((1 >= (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -64,7 +66,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 				return _retval.get();
 			}
 		}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0)))))) {
-			if (!world.isRemote) {
+			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
@@ -88,7 +90,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 							return -1;
 						}
 					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Fuel"))));
-				world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			{
 				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
@@ -113,7 +115,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 				return -1;
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Fuel")))) {
-			if (!world.isRemote) {
+			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
@@ -126,9 +128,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 							return -1;
 						}
 					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Fuel")) - 2));
-				world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
-			if (!world.isRemote) {
+			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
@@ -141,7 +143,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 							return -1;
 						}
 					}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) + 0.2));
-				world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
 		for (int index0 = 0; index0 < (int) (4); index0++) {
@@ -161,7 +163,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						return false;
 					}
 				}.getValue(new BlockPos((int) x, (int) (y + 1), (int) z), "Storage"))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -174,9 +176,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) (y + 1), (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -189,7 +191,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) (y + 1), (int) z), "Power")) + 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if ((new Object() {
@@ -200,7 +202,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						return false;
 					}
 				}.getValue(new BlockPos((int) x, (int) (y - 1), (int) z), "Storage"))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -213,9 +215,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) (y - 1), (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -228,7 +230,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) (y - 1), (int) z), "Power")) + 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if ((new Object() {
@@ -239,7 +241,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						return false;
 					}
 				}.getValue(new BlockPos((int) (x - 1), (int) y, (int) z), "Storage"))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -252,9 +254,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) (x - 1), (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -267,7 +269,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) (x - 1), (int) y, (int) z), "Power")) + 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if ((new Object() {
@@ -278,7 +280,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						return false;
 					}
 				}.getValue(new BlockPos((int) (x + 1), (int) y, (int) z), "Storage"))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -291,9 +293,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) (x + 1), (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -306,7 +308,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) (x + 1), (int) y, (int) z), "Power")) + 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if ((new Object() {
@@ -317,7 +319,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						return false;
 					}
 				}.getValue(new BlockPos((int) x, (int) y, (int) (z + 1)), "Storage"))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -330,9 +332,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) (z + 1));
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -345,7 +347,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) (z + 1)), "Power")) + 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if ((new Object() {
@@ -356,7 +358,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 						return false;
 					}
 				}.getValue(new BlockPos((int) x, (int) y, (int) (z - 1)), "Storage"))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -369,9 +371,9 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) (z - 1));
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -384,7 +386,7 @@ public class CoalGeneratorProcedureProcedure extends PrehistoricKingdomModElemen
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) (z - 1)), "Power")) + 0.25));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 			}

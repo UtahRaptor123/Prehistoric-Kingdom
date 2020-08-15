@@ -3,7 +3,7 @@ package net.mcreator.prehistorickingdom.procedures;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
@@ -48,8 +48,8 @@ public class DNAsequencerprocedureProcedure extends PrehistoricKingdomModElement
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		World world = (World) dependencies.get("world");
-		if (!world.isRemote) {
+		IWorld world = (IWorld) dependencies.get("world");
+		if (!world.getWorld().isRemote) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
@@ -62,7 +62,7 @@ public class DNAsequencerprocedureProcedure extends PrehistoricKingdomModElement
 						return -1;
 					}
 				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Timer")) + 1));
-			world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 		if ((100 <= (new Object() {
 			public double getValue(BlockPos pos, String tag) {
@@ -72,13 +72,13 @@ public class DNAsequencerprocedureProcedure extends PrehistoricKingdomModElement
 				return -1;
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Timer")))) {
-			if (!world.isRemote) {
+			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Timer", 0);
-				world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if ((200 <= (new Object() {
 				public double getValue(BlockPos pos, String tag) {
@@ -148,7 +148,7 @@ public class DNAsequencerprocedureProcedure extends PrehistoricKingdomModElement
 												return _retval.get();
 											}
 										}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (4))).getItem()))))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -161,7 +161,7 @@ public class DNAsequencerprocedureProcedure extends PrehistoricKingdomModElement
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 200));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 					{
 						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
