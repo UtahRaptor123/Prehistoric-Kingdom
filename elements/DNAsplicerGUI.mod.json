@@ -16,6 +16,7 @@
           },
           "id": 0,
           "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
           "name": "Slot #0",
           "x": 264,
           "y": 132
@@ -29,6 +30,7 @@
           },
           "id": 1,
           "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
           "name": "Slot #1",
           "x": 318,
           "y": 132
@@ -42,6 +44,7 @@
           },
           "id": 2,
           "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
           "name": "Slot #2",
           "x": 372,
           "y": 132
@@ -52,6 +55,7 @@
         "data": {
           "id": 3,
           "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
           "name": "Slot #3",
           "x": 552,
           "y": 132

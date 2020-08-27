@@ -561,7 +561,7 @@
       "name": "DNAinjector",
       "type": "block",
       "sortid": 31,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "dn_ainjector"
@@ -750,5 +750,5 @@
     "modElementsPackage": "net.mcreator.prehistorickingdom",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000428114
+  "mcreatorVersion": 202000432115
 }

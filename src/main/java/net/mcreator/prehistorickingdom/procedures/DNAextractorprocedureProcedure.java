@@ -3,7 +3,7 @@ package net.mcreator.prehistorickingdom.procedures;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
@@ -51,7 +51,7 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		World world = (World) dependencies.get("world");
+		IWorld world = (IWorld) dependencies.get("world");
 		double dodrop = 0;
 		if ((200 <= (new Object() {
 			public double getValue(BlockPos pos, String tag) {
@@ -97,7 +97,7 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 								return _retval.get();
 							}
 						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem()))) {
-					if (!world.isRemote) {
+					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
@@ -110,7 +110,7 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 									return -1;
 								}
 							}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 200));
-						world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 					dodrop = (double) Math.random();
 					{
@@ -335,7 +335,7 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 							return _retval.get();
 						}
 					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem()))) {
-				if (!world.isRemote) {
+				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
@@ -348,7 +348,7 @@ public class DNAextractorprocedureProcedure extends PrehistoricKingdomModElement
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Power")) - 200));
-					world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				dodrop = (double) Math.random();
 				{

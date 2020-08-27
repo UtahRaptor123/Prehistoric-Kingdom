@@ -55,7 +55,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.prehistorickingdom.procedures.MachinezeroProcedure;
-import net.mcreator.prehistorickingdom.procedures.DNAinjectorprocedureProcedure;
 import net.mcreator.prehistorickingdom.PrehistoricKingdomModElements;
 
 import javax.annotation.Nullable;
