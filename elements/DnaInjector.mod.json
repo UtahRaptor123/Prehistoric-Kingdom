@@ -97,9 +97,6 @@
     "onBlockAdded": {
       "name": "Machinezero"
     },
-    "onTickUpdate": {
-      "name": "DNAinjectorprocedure"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [
