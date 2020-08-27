@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "prehistoric_kingdom:blocks/fossilblock2",
+    "up": "prehistoric_kingdom:blocks/dirt",
+    "north": "prehistoric_kingdom:blocks/fossilblock",
+    "east": "prehistoric_kingdom:blocks/dirt",
+    "south": "prehistoric_kingdom:blocks/dirt",
+    "west": "prehistoric_kingdom:blocks/fossilblock",
+    "particle": "prehistoric_kingdom:blocks/fossilblock2"
+  }
+}

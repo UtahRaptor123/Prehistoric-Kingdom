@@ -561,7 +561,7 @@
       "name": "DNAinjector",
       "type": "block",
       "sortid": 31,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "dn_ainjector"
@@ -712,6 +712,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "yutyrannus_adult"
+    },
+    {
+      "name": "FossilBlock",
+      "type": "block",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fossil_block"
     }
   ],
   "variable_elements": [],
@@ -733,6 +742,7 @@
       "block.prehistoric_kingdom.dna_extractor": "Dna Extractor",
       "item.prehistoric_kingdom.majungasaurus": "Majungasaurus Spawn Egg",
       "entity.prehistoric_kingdom.majungasaurus": "Majungasaurus",
+      "block.prehistoric_kingdom.fossil_block": "Fossil Block",
       "item.prehistoric_kingdom.allosaurus": "Allosaurus Spawn Egg",
       "block.prehistoric_kingdom.diamondegg": "Diamond Encrusted Plastic Egg",
       "item.prehistoric_kingdom.tyrannosuarus_adult": "Tyrannosuarus Rex Spawn Egg",
