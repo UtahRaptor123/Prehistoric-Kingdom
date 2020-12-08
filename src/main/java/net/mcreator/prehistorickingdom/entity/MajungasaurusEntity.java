@@ -58,8 +58,8 @@ public class MajungasaurusEntity extends PrehistoricKingdomModElements.ModElemen
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.7f, 2.8f)).build("majungasaurus")
 						.setRegistryName("majungasaurus");
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, -6848398, -32988, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("majungasaurus"));
+		elements.items.add(() -> new SpawnEggItem(entity, -6848398, -32988, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName("majungasaurus_spawn_egg"));
 	}
 
 	@SubscribeEvent

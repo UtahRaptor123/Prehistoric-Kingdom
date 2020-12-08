@@ -59,8 +59,8 @@ public class YutyrannusAdultEntity extends PrehistoricKingdomModElements.ModElem
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.4f, 0.3f)).build("yutyrannus_adult")
 						.setRegistryName("yutyrannus_adult");
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, -154, -39424, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("yutyrannus_adult"));
+		elements.items.add(() -> new SpawnEggItem(entity, -154, -39424, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName("yutyrannus_adult_spawn_egg"));
 	}
 
 	@SubscribeEvent

@@ -145,9 +145,9 @@ public class DnaSequencerGuiGui extends PrehistoricKingdomModElements.ModElement
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 1 + 8 + sj * 18, 2 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 1 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 1 + 8 + si * 18, 2 + 142));
+				this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 1 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -327,11 +327,11 @@ public class DnaSequencerGuiGui extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			GL11.glColor4f(1, 1, 1, 1);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
-			this.blit(k, l, 0, 0, this.xSize, this.ySize);
+			this.blit(k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 		}
 
 		@Override
@@ -350,9 +350,9 @@ public class DnaSequencerGuiGui extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Insert DNA in order", 7, 49, -16777216);
-			this.font.drawString("Output DNA", 124, 22, -16777216);
-			this.font.drawString("Output Test Tubes", 88, 67, -16777216);
+			this.font.drawString("Insert DNA in order", 7, 48, -16777216);
+			this.font.drawString("Output DNA", 124, 21, -16777216);
+			this.font.drawString("Output Test Tubes", 88, 66, -16777216);
 		}
 
 		@Override

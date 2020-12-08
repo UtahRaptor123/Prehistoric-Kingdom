@@ -59,8 +59,8 @@ public class CeratosaurusEntity extends PrehistoricKingdomModElements.ModElement
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.7f, 2.6f)).build("ceratosaurus")
 						.setRegistryName("ceratosaurus");
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, -154, -10066330, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("ceratosaurus"));
+		elements.items.add(() -> new SpawnEggItem(entity, -154, -10066330, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName("ceratosaurus_spawn_egg"));
 	}
 
 	@SubscribeEvent

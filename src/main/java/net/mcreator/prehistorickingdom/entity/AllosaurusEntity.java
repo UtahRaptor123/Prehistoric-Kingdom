@@ -58,8 +58,8 @@ public class AllosaurusEntity extends PrehistoricKingdomModElements.ModElement {
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.8f, 3.2f)).build("allosaurus")
 						.setRegistryName("allosaurus");
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, -13421773, -39373, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("allosaurus"));
+		elements.items.add(() -> new SpawnEggItem(entity, -13421773, -39373, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName("allosaurus_spawn_egg"));
 	}
 
 	@SubscribeEvent

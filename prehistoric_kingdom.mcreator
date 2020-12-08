@@ -731,9 +731,11 @@
       "item.prehistoric_kingdom.plastic": "Plastic",
       "entity.prehistoric_kingdom.allosaurus": "Allosaurus",
       "entity.prehistoric_kingdom.ceratosaurus": "Ceratosaurus",
+      "item.prehistoric_kingdom.baryonyx_spawn_egg": "Baryonyx Spawn Egg",
       "block.prehistoric_kingdom.dn_ainjector": "DNA Injector",
       "item.prehistoric_kingdom.fossil": "Fossil",
       "item.prehistoric_kingdom.plasticeggshellfragment": "Plastic Eggshell Fragment",
+      "item.prehistoric_kingdom.yutyrannus_adult_spawn_egg": "Yutyrannus Adult Spawn Egg",
       "item.prehistoric_kingdom.test_tube_chicken_5": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_4": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_3": "Test Tube (Chicken DNA)",
@@ -747,10 +749,13 @@
       "block.prehistoric_kingdom.diamondegg": "Diamond Encrusted Plastic Egg",
       "item.prehistoric_kingdom.tyrannosuarus_adult": "Tyrannosuarus Rex Spawn Egg",
       "item.prehistoric_kingdom.bluechickendna": "Test Tube (Diamond Chicken DNA)",
+      "item.prehistoric_kingdom.ceratosaurus_spawn_egg": "Ceratosaurus Spawn Egg",
+      "item.prehistoric_kingdom.tyrannosuarus_adult_spawn_egg": "Tyrannosuarus Rex Spawn Egg",
       "item.prehistoric_kingdom.ceratosaurus": "Ceratosaurus Spawn Egg",
       "block.prehistoric_kingdom.incubator": "Incubator",
       "block.prehistoric_kingdom.dna_duplicator": "Dna Duplicator",
       "block.prehistoric_kingdom.dn_asplicer": "DNA splicer",
+      "item.prehistoric_kingdom.majungasaurus_spawn_egg": "Majungasaurus Spawn Egg",
       "item.prehistoric_kingdom.test_tube_empty": "Test Tube Empty",
       "item.prehistoric_kingdom.test_tube_chicken_2": "Test Tube (Chicken DNA)",
       "item.prehistoric_kingdom.test_tube_chicken_1": "Test Tube (Chicken DNA)",
@@ -759,6 +764,7 @@
       "entity.prehistoric_kingdom.baryonyx": "Baryonyx",
       "entity.prehistoric_kingdom.yutyrannus_adult": "Yutyrannus Adult",
       "block.prehistoric_kingdom.plasticegg": "Plastic Egg",
+      "item.prehistoric_kingdom.allosaurus_spawn_egg": "Allosaurus Spawn Egg",
       "item.prehistoric_kingdom.yutyrannus_adult": "Yutyrannus Adult Spawn Egg",
       "item.prehistoric_kingdom.baryonyx": "Baryonyx Spawn Egg",
       "item.prehistoric_kingdom.chickenbone": "Chicken Bone",
@@ -782,5 +788,5 @@
     "modElementsPackage": "net.mcreator.prehistorickingdom",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000432115
+  "mcreatorVersion": 202000547520
 }

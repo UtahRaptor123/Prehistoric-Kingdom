@@ -315,11 +315,11 @@ public class DnaduplicatorguiGui extends PrehistoricKingdomModElements.ModElemen
 
 		@Override
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			GL11.glColor4f(1, 1, 1, 1);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
-			this.blit(k, l, 0, 0, this.xSize, this.ySize);
+			this.blit(k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 		}
 
 		@Override
@@ -338,8 +338,8 @@ public class DnaduplicatorguiGui extends PrehistoricKingdomModElements.ModElemen
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Target DNA", 7, 29, -16777216);
-			this.font.drawString("Damaged DNA", 7, 65, -16777216);
+			this.font.drawString("Target DNA", 6, 29, -16777216);
+			this.font.drawString("Damaged DNA", 6, 65, -16777216);
 		}
 
 		@Override

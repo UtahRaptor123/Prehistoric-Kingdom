@@ -55,8 +55,8 @@ public class TyrannosuarusAdultEntity extends PrehistoricKingdomModElements.ModE
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(1.1f, 3.6f)).build("tyrannosuarus_adult")
 						.setRegistryName("tyrannosuarus_adult");
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("tyrannosuarus_adult"));
+		elements.items.add(
+				() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("tyrannosuarus_adult_spawn_egg"));
 	}
 
 	@SubscribeEvent
@@ -116,10 +116,6 @@ public class TyrannosuarusAdultEntity extends PrehistoricKingdomModElements.ModE
 		@Override
 		public double getMountedYOffset() {
 			return super.getMountedYOffset() + 3;
-		}
-
-		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
-			super.dropSpecialItems(source, looting, recentlyHitIn);
 		}
 
 		@Override

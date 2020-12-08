@@ -315,11 +315,11 @@ public class DnaExtractorGuiGui extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			GL11.glColor4f(1, 1, 1, 1);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
-			this.blit(k, l, 0, 0, this.xSize, this.ySize);
+			this.blit(k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 		}
 
 		@Override
@@ -338,9 +338,9 @@ public class DnaExtractorGuiGui extends PrehistoricKingdomModElements.ModElement
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Output", 124, 65, -16777216);
-			this.font.drawString("Test Tube", 115, 29, -16777216);
-			this.font.drawString("Fossil", 25, 47, -16777216);
+			this.font.drawString("Output", 123, 65, -16777216);
+			this.font.drawString("Test Tube", 114, 29, -16777216);
+			this.font.drawString("Fossil", 24, 47, -16777216);
 		}
 
 		@Override

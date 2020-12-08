@@ -59,8 +59,8 @@ public class BaryonyxEntity extends PrehistoricKingdomModElements.ModElement {
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.8f, 2.4f)).build("baryonyx")
 						.setRegistryName("baryonyx");
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, -13408768, -13395712, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("baryonyx"));
+		elements.items.add(() -> new SpawnEggItem(entity, -13408768, -13395712, new Item.Properties().group(ItemGroup.MISC))
+				.setRegistryName("baryonyx_spawn_egg"));
 	}
 
 	@SubscribeEvent

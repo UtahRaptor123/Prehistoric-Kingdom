@@ -1,11 +1,12 @@
 {
-  "_fv": 10,
+  "_fv": 13,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "testtubebrokendna",
     "customModelName": "Normal",
     "name": "Test Tube (Damaged DNA)",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "MISC"
     },
